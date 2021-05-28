@@ -16504,6 +16504,7 @@ p.a-routing-visitors__description{
 }
 .pimcore_area_technologies .a-technologies .a-services__icons-item{
     /* max-height:67px; */
+	border: 1px solid #E0E0E0;
     height:120px;
     width:120px;
     padding:10px;
@@ -16831,7 +16832,8 @@ p.a-routing-visitors__description{
         margin-bottom:0
     }
     .pimcore_area_technologies .a-technologies .a-services__icons-item{
-        margin-right:10px
+        margin-right:10px;
+		border: 1px solid #E0E0E0;
     }
     .pimcore_area_technologies .a-technologies .a-services__icons-item.shadow{
         -webkit-box-shadow:0 2px 6px 0 rgba(0,0,0,.15);
@@ -16877,7 +16879,8 @@ p.a-routing-visitors__description{
         padding:18px 15px 18px 40px
     }
     .pimcore_area_technologies .a-technologies .a-services__icons-item{
-        margin-right:10px
+        margin-right:10px;
+		border: 1px solid #E0E0E0;
     }
 }
 @media all and (min-width:1280px){
@@ -16979,13 +16982,14 @@ p.a-routing-visitors__description{
         margin:10px 0 0
     }
     .pimcore_area_technologies .a-technologies .a-services .a-services__icons{
-        margin:0 -5px
+        margin:0 -5px;		    
     }
     .pimcore_area_technologies .a-technologies .a-services .a-services__icons-item{
         max-height:67px;
         height:67px;
         width:83px;
-        margin:0 2.5px 17px
+        margin:0 2.5px 17px;
+		border: 1px solid #E0E0E0;
     }
     .pimcore_area_technologies .a-technologies .a-services .a-services__icons-item:last-child{
         margin-right:2.5px
