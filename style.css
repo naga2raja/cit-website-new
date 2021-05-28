@@ -6237,3 +6237,53 @@ nav.navbar.bootsnav li.dropdown ul.dropdown-menu {
   width: fit-content;
   } 
 }
+
+/*=================================================================
+            service Page  Image hover   
+
+===================================================================*/
+.flaticon-cogwheel:{
+  color:  black;
+}
+.flaticon-cogwheel:hover{
+  color: #086AD8;
+}
+
+.flaticon-globe-grid:{
+  color: black;
+}
+.flaticon-globe-grid:hover{
+  color: #086AD8;
+}
+
+.fas fa-mobile-alt:{
+ color: black;
+}
+.fas fa-mobile-alt:hover{
+  color: #086AD8;
+}
+
+.flaticon-analysis-1{
+  color:black;
+}
+.flaticon-analysis-1:hover{
+  color: #086AD8;
+}
+.flaticon-technical-support{
+  color:black;
+}
+.flaticon-technical-support:hover{
+  color: #086AD8;
+}
+.flaticon-tools{
+  color: black;
+}
+.flaticon-tools:hover{
+  color: #086AD8;
+}
+.flaticon-meeting{
+  color: black;
+}
+.flaticon-meeting:hover{
+  color: #086AD8;
+}
