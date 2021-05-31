@@ -6288,3 +6288,39 @@ nav.navbar.bootsnav li.dropdown ul.dropdown-menu {
   color: #086AD8;
 }
 
+
+/*  ========================================================
+
+             OUR MAJOR CUSTOMERS 
+    ==============================================================*/
+.img{
+height: 70px;
+width: 100px;
+/*  object-position: center;*/
+/*position: relative;*/
+}
+.card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 2px solid rgba(0,0,0,.125);
+    border-radius: .50rem;
+    align-content: center;
+    justify-content: center;
+    align-items: center;  
+    box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+    transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+    cursor: pointer;        
+}
+.card:hover{
+  transform: scale(1.05);
+  /*border-color: #007bff;*/
+  border-color: #086AD8;
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
