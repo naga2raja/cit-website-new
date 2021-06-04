@@ -6421,3 +6421,13 @@ video {
     margin: 30px 0;
     color: #444;
 }
+
+.native__block {
+    padding: 40px;
+    /* background: -webkit-gradient(linear,left bottom,left top,from(#fff),to(#fff)); */
+    /* background: -webkit-linear-gradient(bottom,#fff,#fff); */
+    background: linear-gradient( 0deg, #fff, #fff);
+    box-shadow: 0 3px 15px rgb(0 0 0 / 6%);
+    border-radius: 7px;
+    margin: 35px 0 41px;
+}
