@@ -2,178 +2,185 @@
 <html lang="en">
 
 <head>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-193468526-1"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-193468526-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-		gtag('config', 'UA-193468526-1');
-	</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
 
-	<script type="text/javascript">      
-		function callSlider() {
-			$('[data-slider="technologies"]').each(function () {
-				var $slider = $(this),
-				options = new Array([
-				{
-					size: 0,
-					props: {
-						maxSlides: 1,
-						pager: true,
-						controls: false,
-						adaptiveHeight: false,
-						moveSlides: 1,
-						slideWidth: 769,
-						slideMargin: 16,
-						touchEnabled: true,
-						pagerCustom: null,
-						useCSS: false
-					}
-				},
-				{
-					size: 768,
-					props: {
-						controls: false,
-						slideMargin: 0,
-						speed: 0,
-						touchEnabled: false,
-						slideWidth: 0,
-						responsive: true,
-						pagerCustom: ".a-services__tabs-container",
-						onSlideBefore: function($slideElement) {
-							$(".a-services__tabs").find("[data-slide-index]").css({"transition": "none"});
-						}
-					}
-				},
-				{
-					size: 1024,
-					props: {
-						controls: false,
-						touchEnabled: false,
-						slideMargin: 0,
-						speed: 0,
-						slideWidth: 0,
-						responsive: true,
-						pagerCustom: ".a-services__tabs-container",
-						onSlideBefore: function($slideElement) {
-							$(".a-services__tabs").find("[data-slide-index]").css({"transition": "none"});
-						}
-					}
-				}
-				]);
+        gtag('config', 'UA-193468526-1');
+    </script>
 
-				var defaultOptions = {
-					maxSlides: 1,
-					adaptiveHeight: true,
-					preloadImages: 'visible',
-					touchEnabled: true,
-					oneToOneTouch: true,
-					swipeThreshold: 100,
-					pager: true,
-					controls: true,
-					infiniteLoop: true,
-					onSliderResize: function () {
-						switchSlider();
-					}
-				};
+    <script type="text/javascript">
+        function callSlider() {
+            $('[data-slider="technologies"]').each(function() {
+                var $slider = $(this),
+                    options = new Array([{
+                            size: 0,
+                            props: {
+                                maxSlides: 1,
+                                pager: true,
+                                controls: false,
+                                adaptiveHeight: false,
+                                moveSlides: 1,
+                                slideWidth: 769,
+                                slideMargin: 16,
+                                touchEnabled: true,
+                                pagerCustom: null,
+                                useCSS: false
+                            }
+                        }, {
+                            size: 768,
+                            props: {
+                                controls: false,
+                                slideMargin: 0,
+                                speed: 0,
+                                touchEnabled: false,
+                                slideWidth: 0,
+                                responsive: true,
+                                pagerCustom: ".a-services__tabs-container",
+                                onSlideBefore: function($slideElement) {
+                                    $(".a-services__tabs").find("[data-slide-index]").css({
+                                        "transition": "none"
+                                    });
+                                }
+                            }
+                        }
+                        // {
+                        // 	size: 1024,
+                        // 	props: {
+                        // 		controls: false,
+                        // 		touchEnabled: false,
+                        // 		slideMargin: 0,
+                        // 		speed: 0,
+                        // 		slideWidth: 0,
+                        // 		responsive: true,
+                        // 		pagerCustom: ".a-services__tabs-container",
+                        // 		onSlideBefore: function($slideElement) {
+                        // 			$(".a-services__tabs").find("[data-slide-index]").css({"transition": "none"});
+                        // 		}
+                        // 	}
+                        // }
+                    ]);
 
-				var itDestroy = false,
-				constructedSlider = false, slides = $(this).children(), slidesNotEmpty = slides.filter(function () {return $.trim($(this).html());}).length;
+                var defaultOptions = {
+                    maxSlides: 1,
+                    adaptiveHeight: true,
+                    preloadImages: 'visible',
+                    touchEnabled: true,
+                    oneToOneTouch: true,
+                    swipeThreshold: 100,
+                    pager: true,
+                    controls: true,
+                    infiniteLoop: true,
+                    onSliderResize: function() {
+                        switchSlider();
+                    }
+                };
 
-				switchSlider(slidesNotEmpty);
+                var itDestroy = false,
+                    constructedSlider = false,
+                    slides = $(this).children(),
+                    slidesNotEmpty = slides.filter(function() {
+                        return $.trim($(this).html());
+                    }).length;
 
-				if (itDestroy) {
-					$(window).on("resize", function () {
-						switchSlider(slidesNotEmpty);
-					});
-				}
+                switchSlider(slidesNotEmpty);
 
-				$slider.find('img').one('load', function () {
-					if ($slider.parent().height() < $slider.height()) {
-						$slider.parent().height($slider.height());
-					}
-				});
+                if (itDestroy) {
+                    $(window).on("resize", function() {
+                        switchSlider(slidesNotEmpty);
+                    });
+                }
 
-				$slider.closest('.a-services__content-block').siblings('.a-services__tabs-container').find('.a-services__tabs-label').on('click', function(e) {
+                $slider.find('img').one('load', function() {
+                    if ($slider.parent().height() < $slider.height()) {
+                        $slider.parent().height($slider.height());
+                    }
+                });
 
-					var goTo = $(this).data('slide-index');
-					$slider.goToSlide(goTo);
-					e.preventDefault();
-					e.stopPropagation();
-				});
+                $slider.closest('.a-services__content-block').siblings('.a-services__tabs-container').find('.a-services__tabs-label').on('click', function(e) {
 
-				function switchSlider(length) {
+                    var goTo = $(this).data('slide-index');
+                    $slider.goToSlide(goTo);
+                    e.preventDefault();
+                    e.stopPropagation();
+                });
 
-					if (!itDestroy || window.innerWidth <= itDestroy.point) {
-						constructedSlider = !constructedSlider.reloadSlider ? $slider.bxSlider(defaultOptions) : constructedSlider;
+                function switchSlider(length) {
 
-						if (length <= 1) {
-							constructedSlider.destroySlider();
-						} else {
-							var windowWidth = window.innerWidth,
-							newOptions = $.extend({}, defaultOptions);
+                    if (!itDestroy || window.innerWidth <= itDestroy.point) {
+                        constructedSlider = !constructedSlider.reloadSlider ? $slider.bxSlider(defaultOptions) : constructedSlider;
 
-							if (options.length) {
-								options[0].forEach(function (item) {
-									if (!isNaN(parseFloat(item.size)) && windowWidth >= parseFloat(item.size)) {
-										newOptions = $.extend(newOptions, item.props);
-									}
-								});
+                        if (length <= 1) {
+                            constructedSlider.destroySlider();
+                        } else {
+                            var windowWidth = window.innerWidth,
+                                newOptions = $.extend({}, defaultOptions);
 
-
-								if (constructedSlider) {
-									constructedSlider.reloadSlider(newOptions);
-								}
-
-							}
-						}
+                            if (options.length) {
+                                options[0].forEach(function(item) {
+                                    if (!isNaN(parseFloat(item.size)) && windowWidth >= parseFloat(item.size)) {
+                                        newOptions = $.extend(newOptions, item.props);
+                                    }
+                                });
 
 
-					} else if (constructedSlider) {
-						constructedSlider.destroySlider();
-						constructedSlider = false;
-					}
-				}
-			});
-		}
-	</script>
+                                if (constructedSlider) {
+                                    constructedSlider.reloadSlider(newOptions);
+                                }
 
-	
+                            }
+                        }
 
-	<!-- End of Google Analytics Code -->
-	<!-- ========== Meta Tags ========== -->
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="CABC'S Group India Website">
 
-	<!-- ========== Page Title ========== -->
-	<title>CABC’S Group India</title>
+                    } else if (constructedSlider) {
+                        constructedSlider.destroySlider();
+                        constructedSlider = false;
+                    }
+                }
+            });
+        }
+    </script>
 
-	<!-- ========== Favicon Icon ========== -->
-	<link rel="shortcut icon" href="assets/img/cabcs-india-favicon.ico" type="image/x-icon">
 
-	<!-- ========== Start Stylesheet ========== -->
-	<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-	<link href="assets/css/font-awesome.min.css" rel="stylesheet" />
-	<link href="assets/css/themify-icons.css" rel="stylesheet" />
-	<link href="assets/css/flaticon-set.css" rel="stylesheet" />
-	<link href="assets/css/magnific-popup.css" rel="stylesheet" />
-	<link href="assets/css/owl.carousel.min.css" rel="stylesheet" />
-	<link href="assets/css/owl.theme.default.min.css" rel="stylesheet" />
-	<link href="assets/css/animate.css" rel="stylesheet" />
-	<link href="assets/css/bootsnav.css" rel="stylesheet" />
-	<link href="style.css" rel="stylesheet">
-	<link href="assets/css/responsive.css" rel="stylesheet" />
-	<link href="assets/css/jquery.bxslider.css" rel="stylesheet" />
-	<link rel="stylesheet" type="text/css" href="assets/css/stylecontent.css">
 
-	<!-- ========== End Stylesheet ========== -->
+    <!-- End of Google Analytics Code -->
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="CABC'S Group India Website">
 
-	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!-- ========== Page Title ========== -->
+    <title>CABC’S Group India</title>
+
+    <!-- ========== Favicon Icon ========== -->
+    <link rel="shortcut icon" href="assets/img/cabcs-india-favicon.ico" type="image/x-icon">
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="assets/css/themify-icons.css" rel="stylesheet" />
+    <link href="assets/css/flaticon-set.css" rel="stylesheet" />
+    <link href="assets/css/magnific-popup.css" rel="stylesheet" />
+    <link href="assets/css/owl.carousel.min.css" rel="stylesheet" />
+    <link href="assets/css/owl.theme.default.min.css" rel="stylesheet" />
+    <link href="assets/css/animate.css" rel="stylesheet" />
+    <link href="assets/css/bootsnav.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet">
+    <link href="assets/css/responsive.css" rel="stylesheet" />
+    <link href="assets/css/jquery.bxslider.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="assets/css/stylecontent.css">
+
+    <!-- ========== End Stylesheet ========== -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="assets/js/html5/html5shiv.min.js"></script>
       <script src="assets/js/html5/respond.min.js"></script>
@@ -183,9 +190,9 @@
 
 <body onload="callSlider()">
 
-	<!-- Preloader Start -->
-	<div class="se-pre-con"></div>
-	<!-- Preloader Ends -->
+    <!-- Preloader Start -->
+    <div class="se-pre-con"></div>
+    <!-- Preloader Ends -->
 
     <!-- Start Header Top 
     	============================================= -->
@@ -238,653 +245,653 @@
 
     <!-- Header 
     	============================================= -->
-    	<header id="home">
+    <header id="home">
 
-    		<!-- Start Navigation -->
-    		<nav class="navbar navbar-default active-border navbar-sticky bootsnav">
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-default active-border navbar-sticky bootsnav">
 
-    			<div class="container">
+            <div class="container">
 
-    				<!-- Start Atribute Navigation -->
-    				<div class="attr-nav inc-border">
-    					<ul>
-    						<li class="contact">
-    							<i class="fas fa-phone"></i> 
-    							<p>Call us today! <strong>+91 80565 55271</strong></p>
-    						</li>
-    					</ul>
-    				</div>        
-    				<!-- End Atribute Navigation -->
+                <!-- Start Atribute Navigation -->
+                <div class="attr-nav inc-border">
+                    <ul>
+                        <li class="contact">
+                            <i class="fas fa-phone"></i>
+                            <p>Call us today! <strong>+91 80565 55271</strong></p>
+                        </li>
+                    </ul>
+                </div>
+                <!-- End Atribute Navigation -->
 
-    				<!-- Start Header Navigation -->
-    				<div class="navbar-header">
-    					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
     						<i class="fa fa-bars"></i>
     					</button>
-    					<a class="navbar-brand" href="index.html">
-    						<img src="assets/img/cabcs-group-india_logo.png" class="logo" alt="Logo">
-    					</a>
-    				</div>
-    				<!-- End Header Navigation -->
+                    <a class="navbar-brand" href="index.html">
+                        <img src="assets/img/cabcs-group-india_logo.png" class="logo" alt="Logo">
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
 
-    				<!-- Collect the nav links, forms, and other content for toggling -->
-    				<div class="collapse navbar-collapse" id="navbar-menu">
-    					<ul class="nav navbar-nav navbar-center" data-in="fadeInDown" data-out="fadeOutUp">
-    						<!-- Menu for changing language to Japanese/English Dropdown -->
-    						<li class="dropdown">
-    							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    								<img id="imgNavSel" src="assets/img/Grossbritanien.gif" alt="..."
-    								class="img-thumbnail icon-small">&nbsp;&nbsp;<span id="lanNavSel">EN</span>
-    								<span class="caret"></span>
-    							</a>
-    							<ul class="dropdown-menu" role="menu">
-    								<li>
-    									<a id="navJap" class="language" href="jp/technologies.html">
-    										<img id="imgNavJap" src="assets/img/Japan.gif" alt="..." class="img-thumbnail icon-small">
-    										&nbsp;&nbsp;<span id="lanNavJap">日本語</span>
-    									</a>
-    								</li>
-    								<li>
-    									<a id="navEng" class="language" href="">
-    										<img id="imgNavEng" src="assets/img/Grossbritanien.gif" alt="..."
-    										class="img-thumbnail icon-small">&nbsp;&nbsp;<span id="lanNavEng">English</span>
-    									</a>
-    								</li>
-    							</ul>
-    						</li>
-    						<!-- End of Language change Menu -->
-    						<li class="dropdown">
-    							<a href="index.html">Home</a>
-    						</li>
-    						<li class="dropdown">
-    							<a href="about-us.html">Who we are</a>
-    						</li>   
-    						<li class="dropdown">
-    							<a href="services.html" class="dropdown-toggle active" data-toggle="dropdown" >What we do</a>
-    							<ul class="dropdown-menu">
-    								<li><a href="services.html">Services</a></li>
-    								<li><a href="innovations.html">Innovations</a></li>
-    								<li><a href="technologies.html">Technologies</a></li>
-    							</ul>
-    						</li>
-    						<li><a href="careers.html">Careers</a></li>
-    						<li>
-    							<a href="contact.html">Contact</a>
-    						</li>
-    					</ul>
-    				</div><!-- /.navbar-collapse -->
-    			</div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav navbar-center" data-in="fadeInDown" data-out="fadeOutUp">
+                        <!-- Menu for changing language to Japanese/English Dropdown -->
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                <img id="imgNavSel" src="assets/img/Grossbritanien.gif" alt="..." class="img-thumbnail icon-small">&nbsp;&nbsp;<span id="lanNavSel">EN</span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a id="navJap" class="language" href="jp/technologies.html">
+                                        <img id="imgNavJap" src="assets/img/Japan.gif" alt="..." class="img-thumbnail icon-small"> &nbsp;&nbsp;
+                                        <span id="lanNavJap">日本語</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a id="navEng" class="language" href="">
+                                        <img id="imgNavEng" src="assets/img/Grossbritanien.gif" alt="..." class="img-thumbnail icon-small">&nbsp;&nbsp;<span id="lanNavEng">English</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- End of Language change Menu -->
+                        <li class="dropdown">
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="about-us.html">Who we are</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="services.html" class="dropdown-toggle active" data-toggle="dropdown">What we do</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="services.html">Services</a></li>
+                                <li><a href="innovations.html">Innovations</a></li>
+                                <li><a href="technologies.html">Technologies</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li>
+                            <a href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
 
-    		</nav>
-    		<!-- End Navigation -->
+        </nav>
+        <!-- End Navigation -->
 
-    	</header>
-    	<!-- End Header -->
+    </header>
+    <!-- End Header -->
 
     <!-- Start Breadcrumb 
     	============================================= -->
-    	<div class="breadcrumb-area shadow dark bg-fixed text-light" style="background-image: url(assets/img/services/technology-bg.jpg);">
-    		<div class="container">
-    			<div class="row align-center">
-    				<div class="col-lg-6">
-    					<h2>Our Technologies</h2>
-    				</div>
-    			</div>
-    		</div>
-    	</div>
-    	<!-- End Breadcrumb -->
+    <div class="breadcrumb-area shadow dark bg-fixed text-light" style="background-image: url(assets/img/services/technology-bg.jpg);">
+        <div class="container">
+            <div class="row align-center">
+                <div class="col-lg-6">
+                    <h2>Our Technologies</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumb -->
 
     <!-- Start Services 
     	============================================= -->
-    	
-    	<div class="pimcore_area_technologies pimcore_area_content">
-    		<div class="container">
-    			<section class="a-technologies">
-    				<section class="a-services  waypoint ">
-    					<h2 class="a-section__title h2 step-up 1 ">
-    						<a id="technologies" class="not-hover-link" name="technologies">OUR CORE TECHNOLOGIES AND ARCHITECTURE PATTERNS</a>
-    					</h2 >
-    					<div class="d-flex a-services__tabs step-up">
-    						<div class="a-services__tabs-container step-in-left step-up">
-    							<ul class="a-services__tabs-container-ul">
-    								<li>
-    									<a data-slide-index="0" href="#" class="a-services__tabs-label active">
-    										<p>Programming Languages</p>
-    									</a>
-    								</li>
-    								<li>
-    									<a data-slide-index="1" href="#" class="a-services__tabs-label ">
-    										<p>Front-End Technologies</p>
-    									</a>
-    								</li>
-									<li>
-    									<a data-slide-index="2" href="#" class="a-services__tabs-label ">
-    										<p>Databases</p>
-    									</a>
-    								</li>
-    								<li>
-    									<a data-slide-index="3" href="#" class="a-services__tabs-label ">
-    										<p>Mobile Platforms</p>
-    									</a>
-    								</li>
-									<li>
-    									<a data-slide-index="4" href="#" class="a-services__tabs-label ">
-    										<p>Operating Systems</p>
-    									</a>
-    								</li>
-    								<li>
-    									<a data-slide-index="5" href="#" class="a-services__tabs-label ">
-    										<p>Clouds</p>
-    									</a>
-    								</li>    								
-    								<li>
-    									<a data-slide-index="6" href="#" class="a-services__tabs-label ">
-    										<p>SAP</p>
-    									</a>
-    								</li>
-									<li>
-    									<a data-slide-index="7" href="#" class="a-services__tabs-label ">
-    										<p>CMS</p>
-    									</a>
-    								</li>
-									<li>
-    									<a data-slide-index="8" href="#" class="a-services__tabs-label ">
-    										<p>Enterprise Application Services</p>
-    									</a>
-    								</li>	
-									<li>
-    									<a data-slide-index="9" href="#" class="a-services__tabs-label ">
-    										<p>FLEXCUBE</p>
-    									</a>
-    								</li>										
-    								<li>
-    									<a data-slide-index="10" href="#" class="a-services__tabs-label ">
-    										<p>DevOps</p>
-    									</a>
-    								</li>
-    							</ul>
-    						</div>
 
-    						<div class="a-services__content-block step-up">
-    							<div class="a-services__content-container" data-slider="technologies">
-    								<div class="a-services__content active" data-slider-item>
-    									<div class="d-flex flex-column h-100">
-    										<h3 class="a-services__name">Programming Languages</h3>
-    										<div class="a-services__icons">
-    											<div class="a-services__icons-item shadow ">
-    												<img class="lazy" width="120" height="120" alt="Microsoft .NET" src="assets/Images/technologies-logos/back-end/net.jpg" data-src="assets/Images/technologies-logos/back-end/net.jpg">
-    											</div>												
-    											<div class="a-services__icons-item shadow ">
-    												<img class="lazy" width="120" height="120" alt="Java" src="assets/Images/technologies-logos/back-end/java-logo-vertical.svg" data-src="assets/Images/technologies-logos/back-end/java-logo-vertical.svg">
-    											</div>
-												<div class="a-services__icons-item shadow ">
-    												<img class="lazy" width="120" height="120" alt="JAVA EE" src="assets/Images/technologies-logos/back-end/jee.svg" data-src="assets/Images/technologies-logos/back-end/jee.svg">
-    											</div>
-												<div class="a-services__icons-item shadow ">
-    												<img class="lazy" width="120" height="120" alt="C" src="assets/Images/technologies-logos/back-end/c_proglang.svg" data-src="assets/Images/technologies-logos/back-end/c_proglang.svg">
-    											</div>
-    											<div class="a-services__icons-item shadow ">
-    												<img class="lazy" width="120" height="120" alt="C++" src="assets/Images/technologies-logos/back-end/c-plus-plus.svg" data-src="assets/Images/technologies-logos/back-end/c-plus-plus.svg">
-    											</div>
-												<div class="a-services__icons-item shadow ">
-    												<img class="lazy" width="120" height="120" alt="C#" src="assets/Images/technologies-logos/back-end/c-sharp.svg" data-src="assets/Images/technologies-logos/back-end/c-sharp.svg">
-    											</div>
-    											<div class="a-services__icons-item shadow ">
-    												<img class="lazy" width="120" height="120" alt="Python" src="assets/Images/technologies-logos/back-end/python_1.svg" data-src="assets/Images/technologies-logos/back-end/python_1.svg">
-    											</div>    											
-    											<div class="a-services__icons-item shadow ">
-    												<img class="lazy" width="120" height="120" alt="PHP" src="assets/Images/technologies-logos/back-end/php-logo-small.svg" data-src="assets/Images/technologies-logos/back-end/php-logo-small.svg">
-    											</div>
-												<div class="a-services__icons-item shadow ">
-    												<img class="lazy" width="120" height="120" alt="PERL Programming" src="assets/Images/technologies-logos/back-end/perl-programming-language.svg" data-src="assets/Images/technologies-logos/back-end/perl-programming-language.svg">
-    											</div>
-												<div class="a-services__icons-item shadow ">
-    												<img class="lazy" width="120" height="120" alt="RUBY" src="assets/Images/technologies-logos/back-end/Ruby_logo.svg" data-src="assets/Images/technologies-logos/back-end/Ruby_logo.svg">
-    											</div>
-												<div class="a-services__icons-item shadow ">
-    												<img class="lazy" width="120" height="120" alt="Golang" src="assets/Images/technologies-logos/back-end/go-logo-blue-small.svg" data-src="assets/Images/technologies-logos/back-end/go-logo-blue-small.svg">
-    											</div>																								
-    										</div>
-    									</div>
-    								</div>
-    								<div class="a-services__content " data-slider-item>
-    									<div class="d-flex flex-column h-100">
-    										<h3 class="a-services__name">Front-End Technologies</h3>
-    										<div class="a-services__icons">
-    											<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="HTML5" src="assets/Images/technologies-logos/front-end/html.svg" data-src="assets/Images/technologies-logos/front-end/html.svg">
-    											</div>
-    											<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="CSS" src="assets/Images/technologies-logos/front-end/css.svg" data-src="assets/Images/technologies-logos/front-end/css.svg">
-    											</div>
-    											<div class="a-services__icons-item shadow ">
-    												<img class="lazy" width="120" height="120" alt="JavaScript" src="assets/Images/technologies-logos/front-end/js.svg" data-src="assets/Images/technologies-logos/front-end/js.svg">
-    											</div>
-    											<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="React JS" src="assets/Images/technologies-logos/front-end/react-js-logo.svg" data-src="assets/Images/technologies-logos/front-end/react-js-logo.svg">
-    											</div>
-    											<div class="a-services__icons-item shadow ">
-    												<img class="lazy" width="120" height="120" alt="Angular JS" src="assets/Images/technologies-logos/front-end/angular-logo.svg" data-src="assets/Images/technologies-logos/front-end/angular-logo.svg">
-    											</div>
-    											<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="Vue.js" src="assets/Images/technologies-logos/front-end/vuejs-logo.svg" data-src="assets/Images/technologies-logos/front-end/vuejs-logo.svg">
-    											</div>
-												<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="Bootstrap" src="assets/Images/technologies-logos/front-end/Bootstrap_logo.svg" data-src="assets/Images/technologies-logos/front-end/Bootstrap_logo.svg">
-    											</div>
-    											<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="Element UI" src="assets/Images/technologies-logos/front-end/element-ui-1.svg" data-src="assets/Images/technologies-logos/front-end/element-ui-1.svg">
-    											</div>
-    											<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="Backbone.js" src="assets/Images/technologies-logos/front-end/backbone-js-logo.svg" data-src="assets/Images/technologies-logos/front-end/backbone-js-logo.svg">
-    											</div>
-    										</div>
-    									</div>
-    								</div>
-									<div class="a-services__content " data-slider-item>
-    									<div class="d-flex flex-column h-100">
-    										<h3 class="a-services__name">Databases</h3>
-    										<div class="a-services__icons">
-    											<p class="a-services__icons-item-name">
-    												SQL
-    											</p>
-    											<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="Microsoft SQL Server" src="assets/Images/technologies-logos/databases/ms-sql.svg" data-src="assets/Images/technologies-logos/technologies/databases/ms-sql.svg">
-    											</div>
-    											<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="MySQL" src="assets/Images/technologies-logos/databases/mysql.svg" data-src="assets/Images/technologies-logos/technologies/databases/mysql.svg">
-    											</div>
-    											<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="Oracle" src="assets/Images/technologies-logos/databases/oracle.svg" data-src="assets/Images/technologies-logos/technologies/databases/oracle.svg">
-    											</div>
-    											<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="PostgreSQL" src="assets/Images/technologies-logos/databases/postgresql-vertical-logo.svg" data-src="assets/Images/technologies-logos/databases/postgresql-vertical-logo.svg">
-    											</div>
-    											<p class="a-services__icons-item-name">
-    												NoSQL
-    											</p>
-    											<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="MongoDB" src="assets/Images/technologies-logos/databases/mongodb.svg" data-src="assets/Images/technologies-logos/databases/mongodb.svg">
-    											</div>
-    											<div class="a-services__icons-item shadow ">
-    												<img class="lazy" width="120" height="120" alt="Apache Hive" src="assets/Images/technologies-logos/big-data/hive.svg" data-src="assets/Images/technologies-logos/big-data/hive.svg">
-    											</div>
-    											<div class="a-services__icons-item shadow ">
-    												<img class="lazy" width="120" height="120" alt="Apache HBase" src="assets/Images/technologies-logos/databases/apache-hbase-logo.svg" data-src="assets/Images/technologies-logos/databases/apache-hbase-logo.svg">
-    											</div>
-    										</div>
-    									</div>
-    								</div>
-    								<div class="a-services__content " data-slider-item>
-    									<div class="d-flex flex-column h-100">
-    										<h3 class="a-services__name">Mobile</h3>
-    										<div class="a-services__icons">
-    											<div class="a-services__icons-item shadow ">
-    												<img class="lazy" width="120" height="120" alt="iOS" src="assets/Images/technologies-logos/mobile/ios-logo.svg" data-src="assets/Images/technologies-logos/mobile/ios-logo.svg">
-    											</div>
-    											<div class="a-services__icons-item shadow ">
-    												<img class="lazy" width="120" height="120" alt="Android" src="assets/Images/technologies-logos/mobile/android-logo.svg" data-src="assets/Images/technologies-logos/mobile/android-logo.svg">
-    											</div>    											
-    										</div>
-    									</div>
-    								</div>
-									<div class="a-services__content " data-slider-item>
-    									<div class="d-flex flex-column h-100">
-    										<h3 class="a-services__name">Operating System</h3>
-    										<div class="a-services__icons">
-    											<div class="a-services__icons-item shadow ">
-    												<img class="lazy" width="120" height="120" alt="iOS" src="assets/Images/technologies-logos/OS/Windows.svg" data-src="assets/Images/technologies-logos/mobile/Windows.svg">
-    											</div>
-    											<div class="a-services__icons-item shadow ">
-    												<img class="lazy" width="120" height="120" alt="Android" src="assets/Images/technologies-logos/OS/Apple.svg" data-src="assets/Images/technologies-logos/mobile/Apple.svg">
-    											</div>
-												<div class="a-services__icons-item shadow ">
-    												<img class="lazy" width="120" height="120" alt="Android" src="assets/Images/technologies-logos/OS/Linux.svg" data-src="assets/Images/technologies-logos/mobile/Linux.svg">
-    											</div> 												
-    										</div>
-    									</div>
-    								</div>
-									<div class="a-services__content " data-slider-item>
-    									<div class="d-flex flex-column h-100">
-    										<h3 class="a-services__name">Clouds</h3>
-    										<div class="a-services__icons">
-    											<div class="a-services__icons-item shadow ">
-    												<img class="lazy" width="120" height="120" alt="Microsoft Azure" src="assets/Images/technologies-logos/cloud/azure-full.svg" data-src="assets/Images/technologies-logos/cloud/azure-full.svg">
-    											</div>
-    											<div class="a-services__icons-item shadow ">
-    												<img class="lazy" width="120" height="120" alt="Amazon Web Services" src="assets/Images/technologies-logos/cloud/aws.svg" data-src="assets/Images/technologies-logos/cloud/aws.svg">
-    											</div>
-    											<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="Google Cloud Platform" src="assets/Images/technologies-logos/cloud/google-cloud-logo.svg" data-src="assets/Images/technologies-logos/cloud/google-cloud-logo.svg">
-    											</div>
-    											<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="IBM Cloud" src="assets/Images/technologies-logos/cloud/ibm_cloud-ar21.svg" data-src="assets/Images/technologies-logos/cloud/ibm_cloud-ar21.svg">
-    											</div>
-												<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="SAP Cloud Platform" src="assets/Images/technologies-logos/cloud/sapcloud.png" data-src="assets/Images/technologies-logos/cloud/sapcloud.png">
-    											</div>
-    										</div>
-    									</div>
-    								</div>    
-    								<div class="a-services__content " data-slider-item>
-    									<div class="d-flex flex-column h-100">
-    										<h3 class="a-services__name">SAP</h3>
-    										<div class="a-services__icons">    											
-    											<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="SAP" src="assets/Images/technologies-logos/SAP/sap.svg" data-src="assets/Images/technologies-logos/SAP/sap.svg">
-    											</div>
-												<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="SAP HANA" src="assets/Images/technologies-logos/SAP/SAP-HANA.jpg" data-src="assets/Images/technologies-logos/SAP/SAP-HANA.jpg">
-    											</div>
-    										</div>
-    									</div>
-    								</div>
-									<div class="a-services__content " data-slider-item>
-    									<div class="d-flex flex-column h-100">
-    										<h3 class="a-services__name">CMS</h3>
-    										<div class="a-services__icons">  
-												<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="WordPress" src="assets/Images/technologies-logos/CMS/WordPress_logo.svg" data-src="assets/Images/technologies-logos/CMS/WordPress_logo.svg">
-    											</div>  											
-    											<div class="a-services__icons-item shadow ">
-    												<img class="lazy" width="120" height="120" alt="Magento" src="assets/Images/technologies-logos/CMS/magento-logo-2.svg" data-src="assets/Images/technologies-logos/CMS/magento-logo-2.svg">
-    											</div>												
-												<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="Drupal" src="assets/Images/technologies-logos/CMS/drupal.svg" data-src="assets/Images/technologies-logos/CMS/drupal.svg">
-    											</div>
-												<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="Joomla!" src="assets/Images/technologies-logos/CMS/Joomla!.svg" data-src="assets/Images/technologies-logos/CMS/Joomla!.svg">
-    											</div>
-												<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="Woo Commerce" src="assets/Images/technologies-logos/CMS/WooCommerce_logo.svg" data-src="assets/Images/technologies-logos/CMS/WooCommerce_logo.svg">
-    											</div>
-												<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="Shopify" src="assets/Images/technologies-logos/CMS/Shopify_logo_2018.svg" data-src="assets/Images/technologies-logos/CMS/Shopify_logo_2018.svg">
-    											</div>
-    										</div>
-    									</div>
-    								</div>
-    								<div class="a-services__content " data-slider-item>
-    									<div class="d-flex flex-column h-100">
-    										<h3 class="a-services__name">Enterprise Application Services</h3>
-    										<div class="a-services__icons"> 
-												<div class="a-services__icons-item shadow ">
-    												<img class="lazy" width="120" height="120" alt="Microsoft Dynamics 365" src="assets/Images/technologies-logos/platforms/dynamics-365-logo.svg" data-src="assets/Images/technologies-logos/platforms/dynamics-365-logo.svg">
-    											</div>
-												<div class="a-services__icons-item shadow ">
-    												<img class="lazy" width="120" height="120" alt="Google Workspace" src="assets/Images/technologies-logos/platforms/G_WS.png" data-src="assets/Images/technologies-logos/platforms/G_WS.png">
-    											</div>
-    											<div class="a-services__icons-item shadow ">
-    												<img class="lazy" width="120" height="120" alt="Salesforce" src="assets/Images/technologies-logos/crm/salesforce.svg" data-src="assets/Images/technologies-logos/crm/salesforce.svg">
-    											</div>    											
-    											<div class="a-services__icons-item shadow ">
-    												<img class="lazy" width="120" height="120" alt="SharePoint" src="assets/Images/technologies-logos/platforms/sharepoint-logo-vertical.svg" data-src="assets/Images/technologies-logos/platforms/sharepoint-logo-vertical.svg">
-    											</div>
-    											<div class="a-services__icons-item shadow ">
-    												<img class="lazy" width="120" height="120" alt="ServiceNow" src="assets/Images/technologies-logos/platforms/servicenow-logo.svg" data-src="assets/Images/technologies-logos/platforms/servicenow-logo.svg">
-    											</div>
-    											<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="Power BI" src="assets/Images/technologies-logos/data-visualization/power-bi-2020.svg" data-src="assets/Images/technologies-logos/data-visualization/power-bi-2020.svg">
-    											</div>
-												<div class="a-services__icons-item shadow ">
-    												<img class="lazy" width="120" height="120" alt="Oracle E-bussiness Suite" src="assets/Images/technologies-logos/platforms/Oracle_EBS.png" data-src="assets/Images/technologies-logos/platforms/Oracle_EBS.png">
-    											</div>
-												<div class="a-services__icons-item shadow ">
-    												<img class="lazy" width="120" height="120" alt="Officve 365" src="assets/Images/technologies-logos/platforms/MS_365.png" data-src="assets/Images/technologies-logos/platforms/MS_365.png">
-    											</div>
-											</div>
-    									</div>
-    								</div>												
-    								<div class="a-services__content " data-slider-item>
-    									<div class="d-flex flex-column h-100">
-    										<h3 class="a-services__name">FLEXCUBE</h3>
-    										<div class="a-services__icons">
-    											<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="Flexcube" src="assets/Images/technologies-logos/fcube/Flexcube.png" data-src="assets/Images/technologies-logos/fcube/Flexcube.png">
-    											</div>
-    											<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="OBIEE" src="assets/Images/technologies-logos/fcube/OBIEE.png" data-src="assets/Images/technologies-logos/fcube/OBIEE.png">
-    											</div>
-    											<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="Oracle SQL" src="assets/Images/technologies-logos/fcube/Oracle SQL.png" data-src="assets/Images/technologies-logos/fcube/Oracle SQL.png">
-    											</div>
-    											<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="PL SQL" src="assets/Images/technologies-logos/fcube/PLSQL.png" data-src="assets/Images/technologies-logos/fcube/PLSQL.png">
-    											</div>
-    										</div>
-    									</div>
-    								</div>
-    								<div class="a-services__content " data-slider-item>
-    									<div class="d-flex flex-column h-100">
-    										<h3 class="a-services__name">DevOps</h3>
-    										<div class="a-services__icons">
-    											<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="Docker" src="assets/Images/technologies-logos/devops/jenkins.svg" data-src="assets/Images/technologies-logos/devops/jenkins.svg">
-    											</div>
-    											<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="Kubernetes" src="assets/Images/technologies-logos/devops/kubernetes-logo.svg" data-src="assets/Images/technologies-logos/devops/kubernetes-logo.svg">
-    											</div>
-    											<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="Ansible" src="assets/Images/technologies-logos/devops/ansible.svg" data-src="assets/Images/technologies-logos/devops/ansible.svg">
-    											</div>
-    											<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="Chef" src="assets/Images/technologies-logos/devops/chef.svg" data-src="assets/Images/technologies-logos/devops/chef.svg">
-    											</div>
-    											<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="Jenkins" src="assets/Images/technologies-logos/devops/gitlab.svg" data-src="assets/Images/technologies-logos/devops/gitlab.svg">
-    											</div>
-    											<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="GitLab CI/CD" src="assets/Images/technologies-logos/devops/gitlab-ci-cd-logo.svg" data-src="assets/Images/technologies-logos/devops/gitlab-ci-cd-logo.svg">
-    											</div>
-    											<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="Puppet" src="assets/Images/technologies-logos/devops/puppet.svg" data-src="assets/Images/technologies-logos/devops/puppet.svg">
-    											</div>
-    											<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="Apache Mesos" src="assets/Images/technologies-logos/devops/apache-mesos-logo-vertical.svg" data-src="assets/Images/technologies-logos/devops/apache-mesos-logo-vertical.svg">
-    											</div>
-    											<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="HashiCorp Terraform" src="assets/Images/technologies-logos/devops/terraform-logo.svg" data-src="assets/Images/technologies-logos/devops/terraform-logo.svg">
-    											</div>
-    											<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="TeamCity" src="assets/Images/technologies-logos/devops/teamcity.svg" data-src="assets/Images/technologies-logos/devops/teamcity.svg">
-    											</div>
-    											<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="Red Hat OpenShift" src="assets/Images/technologies-logos/devops/openshift-logo.svg" data-src="assets/Images/technologies-logos/devops/openshift-logo.svg">
-    											</div>
-    											<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="HashiCorp Packer" src="assets/Images/technologies-logos/devops/packer-logo.svg" data-src="assets/Images/technologies-logos/devops/packer-logo.svg">
-    											</div>
-    											<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="AWS Developer Tools" src="assets/Images/technologies-logos/devops/aws-developer-tools.svg" data-src="assets/Images/technologies-logos/devops/aws-developer-tools.svg">
-    											</div>
-    											<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="Azure DevOps" src="assets/Images/technologies-logos/devops/azure-devops-logo-vertical.svg" data-src="assets/Images/technologies-logos/devops/azure-devops-logo-vertical.svg">
-    											</div>
-    											<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="Google Developer Tools" src="assets/Images/technologies-logos/devops/google-developer-tools.svg" data-src="assets/Images/technologies-logos/devops/google-developer-tools.svg">
-    											</div>
-    											<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="Elasticsearch" src="assets/Images/technologies-logos/devops/elasticsearch.svg" data-src="assets/Images/technologies-logos/devops/elasticsearch.svg">
-    											</div>
+    <div class="pimcore_area_technologies pimcore_area_content">
+        <div class="container">
+            <section class="a-technologies">
+                <section class="a-services  waypoint ">
+                    <h2 class="a-section__title h2 step-up 1 ">
+                        <a id="technologies" class="not-hover-link" name="technologies">OUR CORE TECHNOLOGIES AND ARCHITECTURE PATTERNS</a>
+                    </h2>
+                    <div class="d-flex a-services__tabs step-up">
+                        <div class="a-services__tabs-container step-in-left step-up">
+                            <ul class="a-services__tabs-container-ul">
+                                <li>
+                                    <a data-slide-index="0" href="#" class="a-services__tabs-label active">
+                                        <p>Programming Languages</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-slide-index="1" href="#" class="a-services__tabs-label ">
+                                        <p>Front-End Technologies</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-slide-index="2" href="#" class="a-services__tabs-label ">
+                                        <p>Databases</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-slide-index="3" href="#" class="a-services__tabs-label ">
+                                        <p>Mobile Platforms</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-slide-index="4" href="#" class="a-services__tabs-label ">
+                                        <p>Operating Systems</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-slide-index="5" href="#" class="a-services__tabs-label ">
+                                        <p>Clouds</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-slide-index="6" href="#" class="a-services__tabs-label ">
+                                        <p>SAP</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-slide-index="7" href="#" class="a-services__tabs-label ">
+                                        <p>CMS</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-slide-index="8" href="#" class="a-services__tabs-label ">
+                                        <p>Enterprise Application Services</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-slide-index="9" href="#" class="a-services__tabs-label ">
+                                        <p>FLEXCUBE</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-slide-index="10" href="#" class="a-services__tabs-label ">
+                                        <p>DevOps</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
 
-    											<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="Prometheus" src="assets/Images/technologies-logos/devops/prometheus-logo.svg" data-src="assets/Images/technologies-logos/devops/prometheus-logo.svg">
-    											</div>
-    											<div class="a-services__icons-item ">
-    												<img class="lazy" width="120" height="120" alt="Datadog" src="assets/Images/technologies-logos/devops/datadog-logo.svg" data-src="assets/Images/technologies-logos/devops/datadog-logo.svg">
-    											</div>
-    										</div>
-    									</div>
-    								</div>
-    							</div>
-    						</div>
-    					</div>
-    				</section>
-    			</section>
-    		</div>
-    		<!-- End Services Area -->   
+                        <div class="a-services__content-block step-up">
+                            <div class="a-services__content-container" data-slider="technologies">
+                                <div class="a-services__content" data-slider-item>
+                                    <div class="d-flex flex-column h-100">
+                                        <h3 class="a-services__name">Programming Languages</h3>
+                                        <div class="a-services__icons">
+                                            <div class="a-services__icons-item shadow ">
+                                                <img class="lazy" width="120" height="120" alt="Microsoft .NET" src="assets/Images/technologies-logos/back-end/net.jpg" data-src="assets/Images/technologies-logos/back-end/net.jpg">
+                                            </div>
+                                            <div class="a-services__icons-item shadow ">
+                                                <img class="lazy" width="120" height="120" alt="Java" src="assets/Images/technologies-logos/back-end/java-logo-vertical.svg" data-src="assets/Images/technologies-logos/back-end/java-logo-vertical.svg">
+                                            </div>
+                                            <div class="a-services__icons-item shadow ">
+                                                <img class="lazy" width="120" height="120" alt="JAVA EE" src="assets/Images/technologies-logos/back-end/jee.svg" data-src="assets/Images/technologies-logos/back-end/jee.svg">
+                                            </div>
+                                            <div class="a-services__icons-item shadow ">
+                                                <img class="lazy" width="120" height="120" alt="C" src="assets/Images/technologies-logos/back-end/c_proglang.svg" data-src="assets/Images/technologies-logos/back-end/c_proglang.svg">
+                                            </div>
+                                            <div class="a-services__icons-item shadow ">
+                                                <img class="lazy" width="120" height="120" alt="C++" src="assets/Images/technologies-logos/back-end/c-plus-plus.svg" data-src="assets/Images/technologies-logos/back-end/c-plus-plus.svg">
+                                            </div>
+                                            <div class="a-services__icons-item shadow ">
+                                                <img class="lazy" width="120" height="120" alt="C#" src="assets/Images/technologies-logos/back-end/c-sharp.svg" data-src="assets/Images/technologies-logos/back-end/c-sharp.svg">
+                                            </div>
+                                            <div class="a-services__icons-item shadow ">
+                                                <img class="lazy" width="120" height="120" alt="Python" src="assets/Images/technologies-logos/back-end/python_1.svg" data-src="assets/Images/technologies-logos/back-end/python_1.svg">
+                                            </div>
+                                            <div class="a-services__icons-item shadow ">
+                                                <img class="lazy" width="120" height="120" alt="PHP" src="assets/Images/technologies-logos/back-end/php-logo-small.svg" data-src="assets/Images/technologies-logos/back-end/php-logo-small.svg">
+                                            </div>
+                                            <div class="a-services__icons-item shadow ">
+                                                <img class="lazy" width="120" height="120" alt="PERL Programming" src="assets/Images/technologies-logos/back-end/perl-programming-language.svg" data-src="assets/Images/technologies-logos/back-end/perl-programming-language.svg">
+                                            </div>
+                                            <div class="a-services__icons-item shadow ">
+                                                <img class="lazy" width="120" height="120" alt="RUBY" src="assets/Images/technologies-logos/back-end/Ruby_logo.svg" data-src="assets/Images/technologies-logos/back-end/Ruby_logo.svg">
+                                            </div>
+                                            <div class="a-services__icons-item shadow ">
+                                                <img class="lazy" width="120" height="120" alt="Golang" src="assets/Images/technologies-logos/back-end/go-logo-blue-small.svg" data-src="assets/Images/technologies-logos/back-end/go-logo-blue-small.svg">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="a-services__content " data-slider-item>
+                                    <div class="d-flex flex-column h-100">
+                                        <h3 class="a-services__name">Front-End Technologies</h3>
+                                        <div class="a-services__icons">
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="HTML5" src="assets/Images/technologies-logos/front-end/html.svg" data-src="assets/Images/technologies-logos/front-end/html.svg">
+                                            </div>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="CSS" src="assets/Images/technologies-logos/front-end/css.svg" data-src="assets/Images/technologies-logos/front-end/css.svg">
+                                            </div>
+                                            <div class="a-services__icons-item shadow ">
+                                                <img class="lazy" width="120" height="120" alt="JavaScript" src="assets/Images/technologies-logos/front-end/js.svg" data-src="assets/Images/technologies-logos/front-end/js.svg">
+                                            </div>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="React JS" src="assets/Images/technologies-logos/front-end/react-js-logo.svg" data-src="assets/Images/technologies-logos/front-end/react-js-logo.svg">
+                                            </div>
+                                            <div class="a-services__icons-item shadow ">
+                                                <img class="lazy" width="120" height="120" alt="Angular JS" src="assets/Images/technologies-logos/front-end/angular-logo.svg" data-src="assets/Images/technologies-logos/front-end/angular-logo.svg">
+                                            </div>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="Vue.js" src="assets/Images/technologies-logos/front-end/vuejs-logo.svg" data-src="assets/Images/technologies-logos/front-end/vuejs-logo.svg">
+                                            </div>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="Bootstrap" src="assets/Images/technologies-logos/front-end/Bootstrap_logo.svg" data-src="assets/Images/technologies-logos/front-end/Bootstrap_logo.svg">
+                                            </div>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="Element UI" src="assets/Images/technologies-logos/front-end/element-ui-1.svg" data-src="assets/Images/technologies-logos/front-end/element-ui-1.svg">
+                                            </div>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="Backbone.js" src="assets/Images/technologies-logos/front-end/backbone-js-logo.svg" data-src="assets/Images/technologies-logos/front-end/backbone-js-logo.svg">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="a-services__content " data-slider-item>
+                                    <div class="d-flex flex-column h-100">
+                                        <h3 class="a-services__name">Databases</h3>
+                                        <div class="a-services__icons">
+                                            <p class="a-services__icons-item-name">
+                                                SQL
+                                            </p>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="Microsoft SQL Server" src="assets/Images/technologies-logos/databases/ms-sql.svg" data-src="assets/Images/technologies-logos/technologies/databases/ms-sql.svg">
+                                            </div>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="MySQL" src="assets/Images/technologies-logos/databases/mysql.svg" data-src="assets/Images/technologies-logos/technologies/databases/mysql.svg">
+                                            </div>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="Oracle" src="assets/Images/technologies-logos/databases/oracle.svg" data-src="assets/Images/technologies-logos/technologies/databases/oracle.svg">
+                                            </div>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="PostgreSQL" src="assets/Images/technologies-logos/databases/postgresql-vertical-logo.svg" data-src="assets/Images/technologies-logos/databases/postgresql-vertical-logo.svg">
+                                            </div>
+                                            <p class="a-services__icons-item-name">
+                                                NoSQL
+                                            </p>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="MongoDB" src="assets/Images/technologies-logos/databases/mongodb.svg" data-src="assets/Images/technologies-logos/databases/mongodb.svg">
+                                            </div>
+                                            <div class="a-services__icons-item shadow ">
+                                                <img class="lazy" width="120" height="120" alt="Apache Hive" src="assets/Images/technologies-logos/big-data/hive.svg" data-src="assets/Images/technologies-logos/big-data/hive.svg">
+                                            </div>
+                                            <div class="a-services__icons-item shadow ">
+                                                <img class="lazy" width="120" height="120" alt="Apache HBase" src="assets/Images/technologies-logos/databases/apache-hbase-logo.svg" data-src="assets/Images/technologies-logos/databases/apache-hbase-logo.svg">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="a-services__content " data-slider-item>
+                                    <div class="d-flex flex-column h-100">
+                                        <h3 class="a-services__name">Mobile</h3>
+                                        <div class="a-services__icons">
+                                            <div class="a-services__icons-item shadow ">
+                                                <img class="lazy" width="120" height="120" alt="iOS" src="assets/Images/technologies-logos/mobile/ios-logo.svg" data-src="assets/Images/technologies-logos/mobile/ios-logo.svg">
+                                            </div>
+                                            <div class="a-services__icons-item shadow ">
+                                                <img class="lazy" width="120" height="120" alt="Android" src="assets/Images/technologies-logos/mobile/android-logo.svg" data-src="assets/Images/technologies-logos/mobile/android-logo.svg">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="a-services__content " data-slider-item>
+                                    <div class="d-flex flex-column h-100">
+                                        <h3 class="a-services__name">Operating System</h3>
+                                        <div class="a-services__icons">
+                                            <div class="a-services__icons-item shadow ">
+                                                <img class="lazy" width="120" height="120" alt="iOS" src="assets/Images/technologies-logos/OS/Windows.svg" data-src="assets/Images/technologies-logos/mobile/Windows.svg">
+                                            </div>
+                                            <div class="a-services__icons-item shadow ">
+                                                <img class="lazy" width="120" height="120" alt="Android" src="assets/Images/technologies-logos/OS/Apple.svg" data-src="assets/Images/technologies-logos/mobile/Apple.svg">
+                                            </div>
+                                            <div class="a-services__icons-item shadow ">
+                                                <img class="lazy" width="120" height="120" alt="Android" src="assets/Images/technologies-logos/OS/Linux.svg" data-src="assets/Images/technologies-logos/mobile/Linux.svg">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="a-services__content " data-slider-item>
+                                    <div class="d-flex flex-column h-100">
+                                        <h3 class="a-services__name">Clouds</h3>
+                                        <div class="a-services__icons">
+                                            <div class="a-services__icons-item shadow ">
+                                                <img class="lazy" width="120" height="120" alt="Microsoft Azure" src="assets/Images/technologies-logos/cloud/azure-full.svg" data-src="assets/Images/technologies-logos/cloud/azure-full.svg">
+                                            </div>
+                                            <div class="a-services__icons-item shadow ">
+                                                <img class="lazy" width="120" height="120" alt="Amazon Web Services" src="assets/Images/technologies-logos/cloud/aws.svg" data-src="assets/Images/technologies-logos/cloud/aws.svg">
+                                            </div>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="Google Cloud Platform" src="assets/Images/technologies-logos/cloud/google-cloud-logo.svg" data-src="assets/Images/technologies-logos/cloud/google-cloud-logo.svg">
+                                            </div>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="IBM Cloud" src="assets/Images/technologies-logos/cloud/ibm_cloud-ar21.svg" data-src="assets/Images/technologies-logos/cloud/ibm_cloud-ar21.svg">
+                                            </div>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="SAP Cloud Platform" src="assets/Images/technologies-logos/cloud/sapcloud.png" data-src="assets/Images/technologies-logos/cloud/sapcloud.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="a-services__content " data-slider-item>
+                                    <div class="d-flex flex-column h-100">
+                                        <h3 class="a-services__name">SAP</h3>
+                                        <div class="a-services__icons">
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="SAP" src="assets/Images/technologies-logos/SAP/sap.svg" data-src="assets/Images/technologies-logos/SAP/sap.svg">
+                                            </div>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="SAP HANA" src="assets/Images/technologies-logos/SAP/SAP-HANA.jpg" data-src="assets/Images/technologies-logos/SAP/SAP-HANA.jpg">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="a-services__content " data-slider-item>
+                                    <div class="d-flex flex-column h-100">
+                                        <h3 class="a-services__name">CMS</h3>
+                                        <div class="a-services__icons">
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="WordPress" src="assets/Images/technologies-logos/CMS/WordPress_logo.svg" data-src="assets/Images/technologies-logos/CMS/WordPress_logo.svg">
+                                            </div>
+                                            <div class="a-services__icons-item shadow ">
+                                                <img class="lazy" width="120" height="120" alt="Magento" src="assets/Images/technologies-logos/CMS/magento-logo-2.svg" data-src="assets/Images/technologies-logos/CMS/magento-logo-2.svg">
+                                            </div>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="Drupal" src="assets/Images/technologies-logos/CMS/drupal.svg" data-src="assets/Images/technologies-logos/CMS/drupal.svg">
+                                            </div>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="Joomla!" src="assets/Images/technologies-logos/CMS/Joomla!.svg" data-src="assets/Images/technologies-logos/CMS/Joomla!.svg">
+                                            </div>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="Woo Commerce" src="assets/Images/technologies-logos/CMS/WooCommerce_logo.svg" data-src="assets/Images/technologies-logos/CMS/WooCommerce_logo.svg">
+                                            </div>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="Shopify" src="assets/Images/technologies-logos/CMS/Shopify_logo_2018.svg" data-src="assets/Images/technologies-logos/CMS/Shopify_logo_2018.svg">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="a-services__content " data-slider-item>
+                                    <div class="d-flex flex-column h-100">
+                                        <h3 class="a-services__name">Enterprise Application Services</h3>
+                                        <div class="a-services__icons">
+                                            <div class="a-services__icons-item shadow ">
+                                                <img class="lazy" width="120" height="120" alt="Microsoft Dynamics 365" src="assets/Images/technologies-logos/platforms/dynamics-365-logo.svg" data-src="assets/Images/technologies-logos/platforms/dynamics-365-logo.svg">
+                                            </div>
+                                            <div class="a-services__icons-item shadow ">
+                                                <img class="lazy" width="120" height="120" alt="Google Workspace" src="assets/Images/technologies-logos/platforms/G_WS.png" data-src="assets/Images/technologies-logos/platforms/G_WS.png">
+                                            </div>
+                                            <div class="a-services__icons-item shadow ">
+                                                <img class="lazy" width="120" height="120" alt="Salesforce" src="assets/Images/technologies-logos/crm/salesforce.svg" data-src="assets/Images/technologies-logos/crm/salesforce.svg">
+                                            </div>
+                                            <div class="a-services__icons-item shadow ">
+                                                <img class="lazy" width="120" height="120" alt="SharePoint" src="assets/Images/technologies-logos/platforms/sharepoint-logo-vertical.svg" data-src="assets/Images/technologies-logos/platforms/sharepoint-logo-vertical.svg">
+                                            </div>
+                                            <div class="a-services__icons-item shadow ">
+                                                <img class="lazy" width="120" height="120" alt="ServiceNow" src="assets/Images/technologies-logos/platforms/servicenow-logo.svg" data-src="assets/Images/technologies-logos/platforms/servicenow-logo.svg">
+                                            </div>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="Power BI" src="assets/Images/technologies-logos/data-visualization/power-bi-2020.svg" data-src="assets/Images/technologies-logos/data-visualization/power-bi-2020.svg">
+                                            </div>
+                                            <div class="a-services__icons-item shadow ">
+                                                <img class="lazy" width="120" height="120" alt="Oracle E-bussiness Suite" src="assets/Images/technologies-logos/platforms/Oracle_EBS.png" data-src="assets/Images/technologies-logos/platforms/Oracle_EBS.png">
+                                            </div>
+                                            <div class="a-services__icons-item shadow ">
+                                                <img class="lazy" width="120" height="120" alt="Officve 365" src="assets/Images/technologies-logos/platforms/MS_365.png" data-src="assets/Images/technologies-logos/platforms/MS_365.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="a-services__content " data-slider-item>
+                                    <div class="d-flex flex-column h-100">
+                                        <h3 class="a-services__name">FLEXCUBE</h3>
+                                        <div class="a-services__icons">
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="Flexcube" src="assets/Images/technologies-logos/fcube/Flexcube.png" data-src="assets/Images/technologies-logos/fcube/Flexcube.png">
+                                            </div>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="OBIEE" src="assets/Images/technologies-logos/fcube/OBIEE.png" data-src="assets/Images/technologies-logos/fcube/OBIEE.png">
+                                            </div>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="Oracle SQL" src="assets/Images/technologies-logos/fcube/Oracle SQL.png" data-src="assets/Images/technologies-logos/fcube/Oracle SQL.png">
+                                            </div>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="PL SQL" src="assets/Images/technologies-logos/fcube/PLSQL.png" data-src="assets/Images/technologies-logos/fcube/PLSQL.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="a-services__content " data-slider-item>
+                                    <div class="d-flex flex-column h-100">
+                                        <h3 class="a-services__name">DevOps</h3>
+                                        <div class="a-services__icons">
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="Docker" src="assets/Images/technologies-logos/devops/jenkins.svg" data-src="assets/Images/technologies-logos/devops/jenkins.svg">
+                                            </div>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="Kubernetes" src="assets/Images/technologies-logos/devops/kubernetes-logo.svg" data-src="assets/Images/technologies-logos/devops/kubernetes-logo.svg">
+                                            </div>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="Ansible" src="assets/Images/technologies-logos/devops/ansible.svg" data-src="assets/Images/technologies-logos/devops/ansible.svg">
+                                            </div>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="Chef" src="assets/Images/technologies-logos/devops/chef.svg" data-src="assets/Images/technologies-logos/devops/chef.svg">
+                                            </div>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="Jenkins" src="assets/Images/technologies-logos/devops/gitlab.svg" data-src="assets/Images/technologies-logos/devops/gitlab.svg">
+                                            </div>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="GitLab CI/CD" src="assets/Images/technologies-logos/devops/gitlab-ci-cd-logo.svg" data-src="assets/Images/technologies-logos/devops/gitlab-ci-cd-logo.svg">
+                                            </div>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="Puppet" src="assets/Images/technologies-logos/devops/puppet.svg" data-src="assets/Images/technologies-logos/devops/puppet.svg">
+                                            </div>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="Apache Mesos" src="assets/Images/technologies-logos/devops/apache-mesos-logo-vertical.svg" data-src="assets/Images/technologies-logos/devops/apache-mesos-logo-vertical.svg">
+                                            </div>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="HashiCorp Terraform" src="assets/Images/technologies-logos/devops/terraform-logo.svg" data-src="assets/Images/technologies-logos/devops/terraform-logo.svg">
+                                            </div>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="TeamCity" src="assets/Images/technologies-logos/devops/teamcity.svg" data-src="assets/Images/technologies-logos/devops/teamcity.svg">
+                                            </div>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="Red Hat OpenShift" src="assets/Images/technologies-logos/devops/openshift-logo.svg" data-src="assets/Images/technologies-logos/devops/openshift-logo.svg">
+                                            </div>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="HashiCorp Packer" src="assets/Images/technologies-logos/devops/packer-logo.svg" data-src="assets/Images/technologies-logos/devops/packer-logo.svg">
+                                            </div>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="AWS Developer Tools" src="assets/Images/technologies-logos/devops/aws-developer-tools.svg" data-src="assets/Images/technologies-logos/devops/aws-developer-tools.svg">
+                                            </div>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="Azure DevOps" src="assets/Images/technologies-logos/devops/azure-devops-logo-vertical.svg" data-src="assets/Images/technologies-logos/devops/azure-devops-logo-vertical.svg">
+                                            </div>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="Google Developer Tools" src="assets/Images/technologies-logos/devops/google-developer-tools.svg" data-src="assets/Images/technologies-logos/devops/google-developer-tools.svg">
+                                            </div>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="Elasticsearch" src="assets/Images/technologies-logos/devops/elasticsearch.svg" data-src="assets/Images/technologies-logos/devops/elasticsearch.svg">
+                                            </div>
 
-    		
-     <!-- Start Footer 
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="Prometheus" src="assets/Images/technologies-logos/devops/prometheus-logo.svg" data-src="assets/Images/technologies-logos/devops/prometheus-logo.svg">
+                                            </div>
+                                            <div class="a-services__icons-item ">
+                                                <img class="lazy" width="120" height="120" alt="Datadog" src="assets/Images/technologies-logos/devops/datadog-logo.svg" data-src="assets/Images/technologies-logos/devops/datadog-logo.svg">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </div>
+        <!-- End Services Area -->
+
+
+        <!-- Start Footer 
      	============================================= -->
-     	
-     	<footer class="bg-dark text-light">
-     		<!-- Fixed Shape -->
-     		<div class="fixed-shape">
-     			<img src="assets/img/map.svg" alt="Shape">
-     		</div>
-     		<!-- Fixed Shape -->
-     		<div class="container">
-     			<div class="f-items default-padding">
-     				<div class="row">
-     					<div class="col-lg-4 col-md-4 item">
-     						<div class="f-item about" style="background-color:#fff;">
-     							<img src="assets/img/cabcs-group-india_logo.png" alt="Logo">
-     							<p class="info-details" style="color:#000; ">
-     								<!-- We are an CABC's group company with registered office in Bengaluru, India founded on the philosophy of multi-purpose innovations, from technology services to processes.-->
-     								We are a CABC’S Group Company with registered office is Bengaluru, India and are foundeded on the philosophy of constant innovations in processes, products and services
-     							</p>                           
-     						</div>
-     					</div>
-     					<div class="col-lg-3 col-md-8 item">
-     						<div class="f-item link">
-     							<h4 class="widget-title">Company</h4>
-     							<ul>
-     								<li>
-     									<a href="about-us.html#company-us">About Us</a>
-     								</li>
-     								<li>
-     									<a href="about-us.html#vision_mission1">Vision and Mission</a>
-     								</li>
-     								<li>
-     									<a href="about-us.html#MessageFromOurLeaders">Message From Our Leaders</a>
-     								</li>
-     								<li>
-     									<a href="about-us.html#Ourfocus">Our Focus and Strengths</a>
-     								</li>
-     								<li>
-     									<a href="about-us.html#OurGroupCompanies">Our Group Companies</a>
-     								</li>
-     								<li>
-     									<a href="about-us.html#LatestNews">News</a>
-     								</li>
-     							</ul>
-     						</div>
-     					</div>
-     					
-     					<div class="col-lg-2 col-md-6 item">
-     						<div class="f-item link">
-     							<h4 class="widget-title">Services</h4>
-     							<ul>
-     								<li>
-     									<a href="services.html "> Services</a>
-     								</li>
-     								<li>
-     									<a href="innovations.html"> Innovations</a>
-     								</li>
-     								<li>
-     									<a href="technologies.html"> Technologies</a>
-     								</li>                              
-     							</ul>
-     						</div>
-     					</div>
 
-     					<div class="col-lg-3 col-md-6 item">
-     						<div class="f-item">
-     							<h4 class="widget-title">Contact Info</h4>
-     							<div class="address">
-     								<ul>
-     									<li>
-     										<strong>Address:</strong>
-     										CRN Square, 2nd Floor, No.15, Kasturba Road, Bangalore 560-001.
-     									</li>
-     									<li>
-     										<strong>Email:</strong>
-     										<a href="mailto:arumugamb@cabcsgroup-india.com">arumugamb@cabcsgroup-india.com</a>
-     									</li>
-     								</ul>
-     							</div>
+        <footer class="bg-dark text-light">
+            <!-- Fixed Shape -->
+            <div class="fixed-shape">
+                <img src="assets/img/map.svg" alt="Shape">
+            </div>
+            <!-- Fixed Shape -->
+            <div class="container">
+                <div class="f-items default-padding">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 item">
+                            <div class="f-item about" style="background-color:#fff;">
+                                <img src="assets/img/cabcs-group-india_logo.png" alt="Logo">
+                                <p class="info-details" style="color:#000; ">
+                                    <!-- We are an CABC's group company with registered office in Bengaluru, India founded on the philosophy of multi-purpose innovations, from technology services to processes.-->
+                                    We are a CABC’S Group Company with registered office is Bengaluru, India and are foundeded on the philosophy of constant innovations in processes, products and services
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-8 item">
+                            <div class="f-item link">
+                                <h4 class="widget-title">Company</h4>
+                                <ul>
+                                    <li>
+                                        <a href="about-us.html#company-us">About Us</a>
+                                    </li>
+                                    <li>
+                                        <a href="about-us.html#vision_mission1">Vision and Mission</a>
+                                    </li>
+                                    <li>
+                                        <a href="about-us.html#MessageFromOurLeaders">Message From Our Leaders</a>
+                                    </li>
+                                    <li>
+                                        <a href="about-us.html#Ourfocus">Our Focus and Strengths</a>
+                                    </li>
+                                    <li>
+                                        <a href="about-us.html#OurGroupCompanies">Our Group Companies</a>
+                                    </li>
+                                    <li>
+                                        <a href="about-us.html#LatestNews">News</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
 
-     							<div class="download">
-     								<strong>PAMPHLET</strong>                                
-     								<div class="row">
-     									
-     									<div class="col-3 col-md-6 col-lg-3 clearfix">
-     										<a href="assets/pdf/CABCS_Group_India_Pamphlet.pdf" download="CABC_India_Pamphlet_set.pdf" onclick="ga('send', 'event', 'Pamphlet', 'Download', 'CABCS_Home');">                                   
-     											<span>
+                        <div class="col-lg-2 col-md-6 item">
+                            <div class="f-item link">
+                                <h4 class="widget-title">Services</h4>
+                                <ul>
+                                    <li>
+                                        <a href="services.html "> Services</a>
+                                    </li>
+                                    <li>
+                                        <a href="innovations.html"> Innovations</a>
+                                    </li>
+                                    <li>
+                                        <a href="technologies.html"> Technologies</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-6 item">
+                            <div class="f-item">
+                                <h4 class="widget-title">Contact Info</h4>
+                                <div class="address">
+                                    <ul>
+                                        <li>
+                                            <strong>Address:</strong> CRN Square, 2nd Floor, No.15, Kasturba Road, Bangalore 560-001.
+                                        </li>
+                                        <li>
+                                            <strong>Email:</strong>
+                                            <a href="mailto:arumugamb@cabcsgroup-india.com">arumugamb@cabcsgroup-india.com</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="download">
+                                    <strong>PAMPHLET</strong>
+                                    <div class="row">
+
+                                        <div class="col-3 col-md-6 col-lg-3 clearfix">
+                                            <a href="assets/pdf/CABCS_Group_India_Pamphlet.pdf" download="CABC_India_Pamphlet_set.pdf" onclick="ga('send', 'event', 'Pamphlet', 'Download', 'CABCS_Home');">
+                                                <span>
      												<img src="assets/img/btmarrow.svg" style="max-width:40%">
      												<p style="color:white;text:center;font-size:tiny;line-height: 1.2em;margin-top:0px;">CABC'S Group India </p>
      											</span>
-     										</a>
-     									</div> 
+                                            </a>
+                                        </div>
 
-     									<div class="col-3 col-md-6 col-lg-3 clearfix">                                         
-     										<a href="assets/pdf/Qsfix_Pamphlet.pdf" download="Q`sfix_Pamphlet_set.pdf"
-     										onclick="ga('send', 'event', 'Pamphlet', 'Download', 'CABCS_Home');">
-     										<span>
+                                        <div class="col-3 col-md-6 col-lg-3 clearfix">
+                                            <a href="assets/pdf/Qsfix_Pamphlet.pdf" download="Q`sfix_Pamphlet_set.pdf" onclick="ga('send', 'event', 'Pamphlet', 'Download', 'CABCS_Home');">
+                                                <span>
      											<img src="assets/img/btmarrow.svg" style="max-width:50%">
      											<p style="color:white;text:center;line-height: 1.2em;margin-top:0px;"> Q`sfix </p>
-     										</span>                                                         
-     									</a>
-     								</div>                                          
-     								
-     								<div class="col-3 col-md-6 col-lg-3 clearfix">           
-     									<a href="assets/pdf/CABCS_Group_Pamphlet_set.zip" download="CABCS_Group_Pamphlet_set.zip"
-     									onclick="ga('send', 'event', 'Pamphlet', 'Download', 'CABCS_Home');">
-     									
-     									<span style="color:white;text:center;font-size:tiny;">
+     										</span>
+                                            </a>
+                                        </div>
+
+                                        <div class="col-3 col-md-6 col-lg-3 clearfix">
+                                            <a href="assets/pdf/CABCS_Group_Pamphlet_set.zip" download="CABCS_Group_Pamphlet_set.zip" onclick="ga('send', 'event', 'Pamphlet', 'Download', 'CABCS_Home');">
+
+                                                <span style="color:white;text:center;font-size:tiny;">
      										<img src="assets/img/btmarrow.svg" style="max-width:30%">
      										<p style="color:white;text:center;font-size:tiny;line-height:1.2em;margin-top:0px;"> CABC'S Group Companies </p>                    
-     									</span>                                                         
-     								</a>                                            
-     							</br></br>          
-     						</div>
-     					</div> <!-- End of Download --> 
+     									</span>
+                                            </a>
+                                            </br>
+                                            </br>
+                                        </div>
+                                    </div>
+                                    <!-- End of Download -->
 
-     				</div>
-     			</div>
-     		</div>
+                                </div>
+                            </div>
+                        </div>
 
-     	</div>
-     </div>
- </div>
- <!-- Start Footer Bottom -->
- <div class="footer-bottom">
- 	<div class="container">
- 		<div class="row">
- 			<div class="col-md-12" >
- 				<p style="text-align: center;">Copyright &copy;  2021. Designed by CABC’S Group India</a></p>
- 			</div>                   
- 		</div>
- 	</div>
- </div>
-</div>
-<!-- End Footer Bottom -->
-</footer>
-<!-- End Footer -->
+                    </div>
+                </div>
+            </div>
+            <!-- Start Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p style="text-align: center;">Copyright &copy; 2021. Designed by CABC’S Group India</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <!-- End Footer Bottom -->
+    </footer>
+    <!-- End Footer -->
 
     <!-- jQuery Frameworks
     	============================================= -->
-    	<script src="assets/js/jquery-1.12.4.min.js"></script>
-    	<script src="assets/js/popper.min.js"></script>
-    	<script src="assets/js/bootstrap.min.js"></script>
-    	<script src="assets/js/equal-height.min.js"></script>
-    	<script src="assets/js/jquery.appear.js"></script>
-    	<script src="assets/js/jquery.easing.min.js"></script>
-    	<script src="assets/js/jquery.magnific-popup.min.js"></script>
-    	<script src="assets/js/modernizr.custom.13711.js"></script>
-    	<script src="assets/js/owl.carousel.min.js"></script>
-    	<script src="assets/js/wow.min.js"></script>
-    	<script src="assets/js/progress-bar.min.js"></script>
-    	<script src="assets/js/isotope.pkgd.min.js"></script>
-    	<script src="assets/js/imagesloaded.pkgd.min.js"></script>
-    	<script src="assets/js/count-to.js"></script>
-    	<script src="assets/js/YTPlayer.min.js"></script>
-    	<script src="assets/js/jquery.nice-select.min.js"></script>
-    	<script src="assets/js/bootsnav.js"></script>
-    	<script src="assets/js/main.js"></script>
-    	<script data-main="assets/js/main.js" src="assets/js/jquery.bxslider.min.js"></script>
-    	<script data-main="assets/js/main.js" src="assets/js/require.js"></script>
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/equal-height.min.js"></script>
+    <script src="assets/js/jquery.appear.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/modernizr.custom.13711.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <script src="assets/js/progress-bar.min.js"></script>
+    <script src="assets/js/isotope.pkgd.min.js"></script>
+    <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/count-to.js"></script>
+    <script src="assets/js/YTPlayer.min.js"></script>
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <script src="assets/js/bootsnav.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script data-main="assets/js/main.js" src="assets/js/jquery.bxslider.min.js"></script>
+    <script data-main="assets/js/main.js" src="assets/js/require.js"></script>
 
-    </body>
-    </html>
+</body>
+
+</html>

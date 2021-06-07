@@ -5,11 +5,14 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-193468526-1"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
 
-      gtag('config', 'UA-193468526-1');
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-193468526-1');
     </script>
     <!-- End of Google Analytics Code -->
     <!-- ========== Meta Tags ========== -->
@@ -35,7 +38,7 @@
     <link href="assets/css/animate.css" rel="stylesheet" />
     <link href="assets/css/bootsnav.css" rel="stylesheet" />
     <link href="style.css" rel="stylesheet">
-    <link href="assets/css/responsive.css" rel="stylesheet" />  
+    <link href="assets/css/responsive.css" rel="stylesheet" />
     <!-- ========== End Stylesheet ========== -->
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -104,7 +107,7 @@
 
     <!-- Header 
     ============================================= -->
-        <header id="home">
+    <header id="home">
 
         <!-- Start Navigation -->
         <nav class="navbar navbar-default navbar-fixed white no-background bootsnav">
@@ -116,11 +119,11 @@
                     <div class="attr-nav inc-border">
                         <ul>
                             <li class="contact">
-                                <i class="fas fa-phone"></i> 
+                                <i class="fas fa-phone"></i>
                                 <p>Call us today! <strong>+91 80565 55271</strong></p>
                             </li>
                         </ul>
-                    </div>        
+                    </div>
                     <!-- End Atribute Navigation -->
 
                     <!-- Start Header Navigation -->
@@ -141,21 +144,19 @@
                             <!-- Menu for changing language to Japanese/English Dropdown -->
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    <img id="imgNavSel" src="assets/img/Grossbritanien.gif" alt="..."
-                                    class="img-thumbnail icon-small">&nbsp;&nbsp;<span id="lanNavSel">EN</span>
+                                    <img id="imgNavSel" src="assets/img/Grossbritanien.gif" alt="..." class="img-thumbnail icon-small">&nbsp;&nbsp;<span id="lanNavSel">EN</span>
                                     <span class="caret"></span>
                                 </a>
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
                                         <a id="navJap" class="language" href="jp/index.html">
-                                            <img id="imgNavJap" src="assets/img/Japan.gif" alt="..." class="img-thumbnail icon-small">
-                                            &nbsp;&nbsp;<span id="lanNavJap">日本語</span>
+                                            <img id="imgNavJap" src="assets/img/Japan.gif" alt="..." class="img-thumbnail icon-small"> &nbsp;&nbsp;
+                                            <span id="lanNavJap">日本語</span>
                                         </a>
                                     </li>
                                     <li>
                                         <a id="navEng" class="language" href="">
-                                            <img id="imgNavEng" src="assets/img/Grossbritanien.gif" alt="..."
-                                            class="img-thumbnail icon-small">&nbsp;&nbsp;<span id="lanNavEng">English</span>
+                                            <img id="imgNavEng" src="assets/img/Grossbritanien.gif" alt="..." class="img-thumbnail icon-small">&nbsp;&nbsp;<span id="lanNavEng">English</span>
                                         </a>
                                     </li>
                                 </ul>
@@ -167,9 +168,9 @@
                             </li>
                             <li class="dropdown">
                                 <a href="about-us.html">Who we are</a>
-                            </li>   
+                            </li>
                             <li class="dropdown">
-                                <a href="services.html" class="dropdown-toggle" data-toggle="dropdown" >What we do</a>
+                                <a href="services.html" class="dropdown-toggle" data-toggle="dropdown">What we do</a>
                                 <ul class="dropdown-menu">
                                     <li><a href="services.html">Services</a></li>
                                     <li><a href="innovations.html">Innovations</a></li>
@@ -181,7 +182,8 @@
                                 <a href="contact.html">Contact</a>
                             </li>
                         </ul>
-                    </div><!-- /.navbar-collapse -->
+                    </div>
+                    <!-- /.navbar-collapse -->
                 </div>
             </div>
 
@@ -193,7 +195,7 @@
 
     <!-- Start Banner 
     ============================================= -->
-    <section data-stellar-background-ratio="0.3" id="home" class="slider html-video"> 
+    <section data-stellar-background-ratio="0.3" id="home" class="slider html-video">
         <div class="video-wrapper">
             <video class="text-center main-video" muted="" autoplay="" loop="">
                 <!-- WebM/VP8 for Firefox4, Opera, and Chrome -->
@@ -212,24 +214,24 @@
                                 <h2 class="wow fadeInDown"><strong>CABC'S Group India</strong></h2>
                             </div>
                             <div class="company-name-subtext">
-                              <h3 class="wow fadeInLeft">
-                                Your One Stop Technology Partners
-                              </h3>
+                                <h3 class="wow fadeInLeft">
+                                    Your One Stop Technology Partners
+                                </h3>
                             </div>
                             <!--<a class="btn circle btn-theme effect btn-md wow fadeInUp" href="#process">Start Now <i class="fas fa-arrow-alt-circle-right"></i></a>-->
                         </div>
                     </div>
                 </div>
-            </div>            
-         </div>
+            </div>
+        </div>
     </section>
 
     <!-- End Banner -->
 
 
-   <!-- Start Banner 
+    <!-- Start Banner 
     ============================================= -->
-   <!--  <div class="banner-area auto-height text-color bg-gray inc-shape">
+    <!--  <div class="banner-area auto-height text-color bg-gray inc-shape">
         <div class="item">
             <div class="container">
                 <div class="row align-center">
@@ -264,18 +266,19 @@
                         <img src="assets/img/home/2.jpg" alt="Thumb">
                         <div class="overlay">
                             <div class="content">
-                               <!-- <h4>Rich 100+ experience with Japanese Clients </h4>-->
-                               <h4>Rich and Exclusive<br><h4>
-                                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                                  <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                      <span class="d-block w-100"><h4>IT partnership with Global Clients</h4></span>
-                                    </div>
-                                    <div class="carousel-item">
-                                      <span class="d-block w-100"><h4>Deliver to excel customer satisfaction</h4></span>
-                                    </div>
-                                  </div>
-                                </div>
+                                <!-- <h4>Rich 100+ experience with Japanese Clients </h4>-->
+                                <h4>Rich and Exclusive<br>
+                                    <h4>
+                                        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
+                                                    <span class="d-block w-100"><h4>IT partnership with Global Clients</h4></span>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <span class="d-block w-100"><h4>Deliver to excel customer satisfaction</h4></span>
+                                                </div>
+                                            </div>
+                                        </div>
                             </div>
                         </div>
                     </div>
@@ -293,7 +296,7 @@
                             <div class="info">
                                 <h4>Customer Satisfied Company </h4>
                                 <p>
-                                    A customer talking about their experience with you is worth ten times that which you write or say about yourself. 
+                                    A customer talking about their experience with you is worth ten times that which you write or say about yourself.
                                 </p>
                             </div>
                         </li>
@@ -302,7 +305,7 @@
                                 <i class="flaticon-award-star-with-olive-branches"></i>
                             </div>
                             <div class="info">
-                               <!-- <h4>Partner of CABC'S Group Japan</h4>-->
+                                <!-- <h4>Partner of CABC'S Group Japan</h4>-->
                                 <h4>Member of CABC'S Group Japan</h4>
                                 <p>
                                     CABC'S Group India is one of the group company of CABC'S Group situated in the IT hub to enhance the business and provide services from India.
@@ -330,10 +333,12 @@
                     <h5>why choose us</h5>
                     <h2>Custom IT Solutions for Your Business</h2>
                     <p class="info-details">
-                        Like many of our clients, you might need a tool or functionality that doesn't exist in a ready-made solution. Or you require features within an existing solution to fit the unique demands of your business. We have the team, the experience, the tools, and the drive to bring our clients’ solutions to market.
+                        Like many of our clients, you might need a tool or functionality that doesn't exist in a ready-made solution. Or you require features within an existing solution to fit the unique demands of your business. We have the team, the experience, the tools,
+                        and the drive to bring our clients’ solutions to market.
                     </p>
                     <p class="info-details">
-                        We help you to identify challenges and uncover opportunities so that we can diagnose and build a plan to support your strategic, long-term goals via cost-effective and results-driven technology solutions. This helps us build a customized IT solution that’s unique to each business’s needs.
+                        We help you to identify challenges and uncover opportunities so that we can diagnose and build a plan to support your strategic, long-term goals via cost-effective and results-driven technology solutions. This helps us build a customized IT solution that’s
+                        unique to each business’s needs.
                     </p>
                     <a class="popup-youtube theme relative video-play-button" href="assets/img/movie/parts_MSC_noBGM.mp4">
                         <i class="fa fa-play"></i> <span>Video Showcase</span>
@@ -349,16 +354,16 @@
                                 <i class="flaticon-cogwheel"></i>
                                 <h5><a>Application Development</a></h5>
                                 <p class="info-details">
-                                     Our application developers are industry-specific technology experts with many years of experience to build applications. 
+                                    Our application developers are industry-specific technology experts with many years of experience to build applications.
                                 </p>
                             </div>
                             <!-- End Single Item -->
                             <!-- Single Item -->
                             <div class="item">
                                 <i class="flaticon-globe-grid"></i>
-                                <h5><a >Security Solutions</a></h5>
+                                <h5><a>Security Solutions</a></h5>
                                 <p class="info-details">
-                                  CABC'S Group India provides extensive security solutions for businesses of all sizes across all industries.
+                                    CABC'S Group India provides extensive security solutions for businesses of all sizes across all industries.
                                 </p>
                             </div>
                             <!-- End Single Item -->
@@ -370,18 +375,18 @@
                             <!-- Single Item -->
                             <div class="item">
                                 <i class="flaticon-cloud-storage"></i>
-                                <h5><a >Cloud Computing</a></h5>
+                                <h5><a>Cloud Computing</a></h5>
                                 <p class="info-details">
-                                     Cloud computing is the third wave of the digital revolution. Meet your business challenges head on with cloud computing services with CABC'S Group India.
+                                    Cloud computing is the third wave of the digital revolution. Meet your business challenges head on with cloud computing services with CABC'S Group India.
                                 </p>
                             </div>
                             <!-- End Single Item -->
                             <!-- Single Item -->
                             <div class="item">
                                 <i class="flaticon-gear"></i>
-                                <h5><a >Research and Development</a></h5>
+                                <h5><a>Research and Development</a></h5>
                                 <p class="info-details">
-                                   CABC'S Group India includes extensive market research which leads to the creation of products and services.
+                                    CABC'S Group India includes extensive market research which leads to the creation of products and services.
                                 </p>
                             </div>
                             <!-- End Single Item -->
@@ -390,7 +395,7 @@
 
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>
@@ -422,7 +427,7 @@
                                 </div>
                                 <h5>Requirements</h5>
                                 <p>
-                                    A good plan today is better than a perfect plan tomorrow. 
+                                    A good plan today is better than a perfect plan tomorrow.
                                 </p>
                             </div>
                         </div>
@@ -438,7 +443,7 @@
                                 </div>
                                 <h5>Design</h5>
                                 <p>
-                                    Intuitive design is how we give the user new superpowers. 
+                                    Intuitive design is how we give the user new superpowers.
                                 </p>
                             </div>
                         </div>
@@ -470,8 +475,8 @@
                                 </div>
                                 <h5>Delivery & Support</h5>
                                 <p>
-                                   Always deliver more than<br> expected.
-                               </br>
+                                    Always deliver more than<br> expected.
+                                    </br>
                                 </p>
                             </div>
                         </div>
@@ -493,8 +498,9 @@
                         <h5>Works About</h5>
                         <h2>Trusted by 100+ <br> Japanese Customers</h2>
                         <p class="info-details">
-                           <!-- We have Comprehensive infrastructure, facilities and process networks which are client centric, transparent and user friendly. Doing quality of service and predictability of costs stepping from a well-defined vision and proven execution strategy. We are a culture based on strong work ethics and enables maximum overlap with clients across the world. In-depth understanding of Industry and total responsibility for the solution provided including end-to-end services.-->
-                           We have Comprehensive infrastructure, facilities and well-tested  process that are client-centric, transparent and predictable. High quality of service at predictable costs is a result of well planned and execution strategy. We nurture a strong wok ethics and attract repeat orders year after year. We take complete ownership and deliver  end-to-end solutions powered by our in-depth understanding of the industry and technology. 
+                            <!-- We have Comprehensive infrastructure, facilities and process networks which are client centric, transparent and user friendly. Doing quality of service and predictability of costs stepping from a well-defined vision and proven execution strategy. We are a culture based on strong work ethics and enables maximum overlap with clients across the world. In-depth understanding of Industry and total responsibility for the solution provided including end-to-end services.-->
+                            We have Comprehensive infrastructure, facilities and well-tested process that are client-centric, transparent and predictable. High quality of service at predictable costs is a result of well planned and execution strategy. We nurture a strong wok ethics
+                            and attract repeat orders year after year. We take complete ownership and deliver end-to-end solutions powered by our in-depth understanding of the industry and technology.
                         </p>
                         <ul>
                             <li>
@@ -511,32 +517,32 @@
                             <img src="assets/img/home/3.jpg" alt="Thumb">
                             <div class="fun-fact">
                                 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                                  <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                      <span class="medium d-block w-100">Experience derived from delivering 1000+ projects</span>
-                                    </div>
-                                    <div class="carousel-item">
-                                      <span class="medium d-block w-100">Multi-technology and <br> Cross-cultural teams</span>
-                                    </div>
-                                    <div class="carousel-item">
-                                        <span class="medium d-block w-100">On Time Every Time <br> delivery
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <span class="medium d-block w-100">Experience derived from delivering 1000+ projects</span>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <span class="medium d-block w-100">Multi-technology and <br> Cross-cultural teams</span>
+                                        </div>
+                                        <div class="carousel-item">
+                                            <span class="medium d-block w-100">On Time Every Time <br> delivery
                                         </span>
+                                        </div>
                                     </div>
-                                  </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>   
+        </div>
         <div class="fixed-shape-bottom">
             <img src="assets/img/shape/1.svg" alt="Shape">
         </div>
     </div>
 
 
-    <!-- End Works About Area --> 
+    <!-- End Works About Area -->
     <div class="col-lg-12">
         <div class="container">
             <div class="row">
@@ -547,78 +553,78 @@
                 </div>
             </div>
         </div>
-      
+
     </div>
 
     <div class="container">
-    <div class="row">
-        <div class="row col-lg-12 ">
-            <div class="card card-body flex mr-2 "  >
-                <img class="img"  src="assets/Images/Customer-logo/patcore.SVG"  alt="Patcore">
+        <div class="row">
+            <div class="row col-lg-12 ">
+                <div class="card card-body flex mr-2 ">
+                    <img class="img" src="assets/Images/Customer-logo/patcore.SVG" alt="Patcore">
+                </div>
+                <div class="card card-body flex mr-2 ">
+                    <img class="img" src="assets/Images/Customer-logo/Qsfix_logo.svg" alt="Qsfix">
+                </div>
+                <div class="card card-body flex mr-2 " style="padding:0px;">
+                    <img class="img" src="assets/Images/Customer-logo/forwardsystem_logo.svg" style="width: 218px;" alt="Forward Systems">
+                </div>
+                <div class="card card-body flex mr-2 ">
+                    <img class="img" src="assets/Images/Customer-logo/AIST-logo.PNG" alt="AIST">
+                </div>
+                <div class="card card-body flex mr-2 " style="padding:0px;">
+                    <img class="img" src="assets/Images/Customer-logo/daiichi-sankyo.svg" style="width:auto;" alt="daiichi-sankyo">
+                </div>
             </div>
-            <div class="card card-body flex mr-2 ">
-                <img class="img"  src="assets/Images/Customer-logo/Qsfix_logo.svg"  alt="Qsfix">
+        </div><br>
+        <div class="row">
+            <div class="row col-lg-12">
+                <div class="card card-body flex mr-2 ">
+                    <img class="img" src="assets/Images/Customer-logo/Sony_logo.svg" alt="SONY">
+                </div>
+                <div class="card card-body flex mr-2 ">
+                    <img class="img" src="assets/Images/Customer-logo/Fujitsu-Logo.svg" alt="Fujitsu">
+                </div>
+                <div class="card card-body flex mr-2 ">
+                    <img class="img" src="assets/Images/Customer-logo/cybernet_logo.gif" alt="cybernet">
+                </div>
+                <!-- <div class="card card-body flex mr-2 ">
+                    <img class="img" src="assets/Images/Customer-logo/nri_logo.png" alt="NRI">
+                </div> -->
+                <div class="card card-body flex mr-2 ">
+                    <img class="img" src="assets/Images/Customer-logo/Delight_Works.png" alt="Delight_Works">
+                </div>
+                <div class="card card-body flex mr-2 ">
+                    <img class="img" style="padding-left: 30px; padding-right: 30px;" src="assets/Images/Customer-logo/ID_logo.png" alt="ID-logo1">
+                </div>
             </div>
-            <div class="card card-body flex mr-2 ">
-                <img class="img" src="assets/Images/Customer-logo/forwardsystem_logo.svg" alt="Forward Systems">
-            </div>            
-            <div class="card card-body flex mr-2 ">
-                <img class="img"  src="assets/Images/Customer-logo/aist_logo.svg" alt="AIST">
+        </div><br>
+        <div class="row">
+            <div class="row col-lg-12">
+                <div class="card card-body flex mr-2 ">
+                    <img class="img" src="assets/Images/Customer-logo/osaka university.png" alt="Osaka_University">
+                </div>
+                <div class="card card-body flex mr-2 " style="padding:0px 1.25rem">
+                    <img class="img" src="assets/Images/Customer-logo/WASEDA.png" style="height: 90px" alt="WASEDA">
+                </div>
+                <div class="card card-body flex mr-2 ">
+                    <img class="img" src="assets/Images/Customer-logo/Mitsubishi_UFJ_Financial_Group.svg" alt="MUFG">
+                </div>
+                <div class="card card-body flex mr-2 ">
+                    <img class="img" src="assets/Images/Customer-logo/Mizuho_logo.svg" alt="Mizuho">
+                </div>
+                <div class="card card-body flex mr-2 ">
+                    <img class="img" src="assets/Images/Customer-logo/Nissan_2020_logo.svg" alt="Nissan">
+                </div>
+                <!-- <div class="card card-body flex mr-2 ">
+                    <img class="img" src="assets/Images/Customer-logo/Toyota.svg" alt="Toyota">
+                </div> -->
             </div>
-            <div class="card card-body flex mr-2 ">
-                <img class="img" src="assets/Images/Customer-logo/daiichi-sankyo.svg" alt="daiichi-sankyo">
-            </div>            
-        </div>          
-      </div><br>
-      <div class="row">
-          <div class="row col-lg-12">
-              <div class="card card-body flex mr-2 "  >
-                <img class="img" src="assets/Images/Customer-logo/Sony_logo.svg" alt="SONY">
-            </div>
-            <div class="card card-body flex mr-2 "  >
-                <img class="img" src="assets/Images/Customer-logo/Fujitsu-Logo.svg" alt="Fujitsu">
-            </div>
-            <div class="card card-body flex mr-2 "  >
-                <img class="img" src="assets/Images/Customer-logo/cybernet_logo.gif" alt="cybernet">
-            </div>
-            <div class="card card-body flex mr-2 "  >
-                <img class="img" src="assets/Images/Customer-logo/nri_logo.png" alt="NRI">
-            </div>
-            <div class="card card-body flex mr-2 "  >
-                <img class="img" src="assets/Images/Customer-logo/Delight_Works.png" alt="Delight_Works">
-            </div>
-            <div class="card card-body flex mr-2 "  >
-                <img class="img" src="assets/Images/Customer-logo/ID_logo.png" alt="ID-logo1">
-            </div>
-          </div>
-      </div><br>
-      <div class="row">
-          <div class="row col-lg-12">
-              <div class="card card-body flex mr-2 "  >
-                <img class="img" src="assets/Images/Customer-logo/Osaka_University_logo.svg" alt="Osaka_University">
-            </div>
-            <div class="card card-body flex mr-2 "  >
-                <img class="img" src="assets/Images/Customer-logo/Waseda_University_Logo.png" alt="WASEDA">
-            </div>
-            <div class="card card-body flex mr-2 "  >
-                <img class="img" src="assets/Images/Customer-logo/Mitsubishi_UFJ_Financial_Group.svg" alt="MUFG">
-            </div>
-            <div class="card card-body flex mr-2 "  >
-                <img class="img" src="assets/Images/Customer-logo/Mizuho_logo.svg" alt="Mizuho">
-            </div>
-            <div class="card card-body flex mr-2 "  >
-                <img class="img" src="assets/Images/Customer-logo/Nissan_2020_logo.svg" alt="Nissan">
-            </div>
-            <div class="card card-body flex mr-2 "  >
-                <img class="img" src="assets/Images/Customer-logo/Toyota.svg" alt="Toyota">
-            </div>
-          </div>
-      </div>
+        </div>
 
-  </div><br><br><br> 
+    </div><br><br><br>
 
 
-  <!-- End Customer Work -->
+    <!-- End Customer Work -->
 
     <!-- Start Quick Contact Area
     ============================================= -->
@@ -628,7 +634,7 @@
                 <div class="row align-center">
                     <div class="col-lg-8">
                         <h5>Need help?</h5>
-                       <!-- <h2>Easy solutions for all <strong>difficult IT problems</strong>, keep business safe & ensure high availability.</h2>-->
+                        <!-- <h2>Easy solutions for all <strong>difficult IT problems</strong>, keep business safe & ensure high availability.</h2>-->
 
                         <h2>Effective Solutions for <strong>challenging IT problems</strong>. Make Businesses Safe, Secure, and Highly Available</h2>
                     </div>
@@ -643,8 +649,8 @@
 
     <!-- Start Footer 
     ============================================= -->
-   
-     <footer class="bg-dark text-light">
+
+    <footer class="bg-dark text-light">
         <!-- Fixed Shape -->
         <div class="fixed-shape">
             <img src="assets/img/map.svg" alt="Shape">
@@ -657,12 +663,12 @@
                         <div class="f-item about" style="background-color:#fff;">
                             <img src="assets/img/cabcs-group-india_logo.png" alt="Logo">
                             <p class="info-details" style="color:#000; ">
-                               <!-- We are an CABC's group company with registered office in Bengaluru, India founded on the philosophy of multi-purpose innovations, from technology services to processes.-->
-                               We are a CABC’S Group Company with registered office is Bengaluru, India and are foundeded on the philosophy of constant innovations in processes, products and services
-                            </p>                           
+                                <!-- We are an CABC's group company with registered office in Bengaluru, India founded on the philosophy of multi-purpose innovations, from technology services to processes.-->
+                                We are a CABC’S Group Company with registered office is Bengaluru, India and are foundeded on the philosophy of constant innovations in processes, products and services
+                            </p>
                         </div>
                     </div>
-                     <div class="col-lg-3 col-md-8 item">
+                    <div class="col-lg-3 col-md-8 item">
                         <div class="f-item link">
                             <h4 class="widget-title">Company</h4>
                             <ul>
@@ -681,13 +687,13 @@
                                 <li>
                                     <a href="about-us.html#OurGroupCompanies">Our Group Companies</a>
                                 </li>
-                                 <li>
+                                <li>
                                     <a href="about-us.html#LatestNews">News</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    
+
                     <div class="col-lg-2 col-md-6 item">
                         <div class="f-item link">
                             <h4 class="widget-title">Services</h4>
@@ -700,7 +706,7 @@
                                 </li>
                                 <li>
                                     <a href="technologies.html"> Technologies</a>
-                                </li>                              
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -711,8 +717,7 @@
                             <div class="address">
                                 <ul>
                                     <li>
-                                        <strong>Address:</strong>
-                                        CRN Square, 2nd Floor, No.15, Kasturba Road, Bangalore 560-001.
+                                        <strong>Address:</strong> CRN Square, 2nd Floor, No.15, Kasturba Road, Bangalore 560-001.
                                     </li>
                                     <li>
                                         <strong>Email:</strong>
@@ -722,40 +727,40 @@
                             </div>
 
                             <div class="download">
-                                <strong>PAMPHLET</strong>                                
+                                <strong>PAMPHLET</strong>
                                 <div class="row">
-                                    
+
                                     <div class="col-3 col-md-6 col-lg-3 clearfix">
-                                        <a href="assets/pdf/CABCS_Group_India_Pamphlet.pdf" download="CABC_India_Pamphlet_set.pdf" onclick="ga('send', 'event', 'Pamphlet', 'Download', 'CABCS_Home');">                                   
+                                        <a href="assets/pdf/CABCS_Group_India_Pamphlet.pdf" download="CABC_India_Pamphlet_set.pdf" onclick="ga('send', 'event', 'Pamphlet', 'Download', 'CABCS_Home');">
                                             <span>
                                                 <img src="assets/img/btmarrow.svg" style="max-width:40%">
                                                 <p style="color:white;text:center;font-size:tiny;line-height: 1.2em;margin-top:0px;">CABC'S Group India </p>
                                             </span>
                                         </a>
-                                    </div> 
+                                    </div>
 
-                                    <div class="col-3 col-md-6 col-lg-3 clearfix">                                         
-                                        <a href="assets/pdf/Qsfix_Pamphlet.pdf" download="Q`sfix_Pamphlet_set.pdf"
-                                            onclick="ga('send', 'event', 'Pamphlet', 'Download', 'CABCS_Home');">
-                                                <span>
+                                    <div class="col-3 col-md-6 col-lg-3 clearfix">
+                                        <a href="assets/pdf/Qsfix_Pamphlet.pdf" download="Q`sfix_Pamphlet_set.pdf" onclick="ga('send', 'event', 'Pamphlet', 'Download', 'CABCS_Home');">
+                                            <span>
                                                     <img src="assets/img/btmarrow.svg" style="max-width:50%">
                                                     <p style="color:white;text:center;line-height: 1.2em;margin-top:0px;"> Q`sfix </p>
-                                                </span>                                                         
+                                                </span>
                                         </a>
-                                    </div>                                          
-                         
-                                    <div class="col-3 col-md-6 col-lg-3 clearfix">           
-                                        <a href="assets/pdf/CABCS_Group_Pamphlet_set.zip" download="CABC'S_Group_Pamphlet_set.zip"
-                                        onclick="ga('send', 'event', 'Pamphlet', 'Download', 'CABCS_Home');">
-                                                
+                                    </div>
+
+                                    <div class="col-3 col-md-6 col-lg-3 clearfix">
+                                        <a href="assets/pdf/CABCS_Group_Pamphlet_set.zip" download="CABC'S_Group_Pamphlet_set.zip" onclick="ga('send', 'event', 'Pamphlet', 'Download', 'CABCS_Home');">
+
                                             <span style="color:white;text:center;font-size:tiny;">
                                                 <img src="assets/img/btmarrow.svg" style="max-width:30%">
                                                     <p style="color:white;text:center;font-size:tiny;line-height:1.2em;margin-top:0px;"> CABC'S Group Companies </p>                 
-                                            </span>                                                         
-                                        </a>                                            
-                                        </br></br>          
+                                            </span>
+                                        </a>
+                                        </br>
+                                        </br>
                                     </div>
-                                </div> <!-- End of Download --> 
+                                </div>
+                                <!-- End of Download -->
 
                             </div>
                         </div>
@@ -764,16 +769,17 @@
                 </div>
             </div>
         </div>
-         <!-- Start Footer Bottom -->
+        <!-- Start Footer Bottom -->
         <div class="footer-bottom">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12" >
-                        <p style="text-align: center;">Copyright &copy;  2021. Designed by CABC’S Group India</a></p>
-                    </div>                   
+                    <div class="col-md-12">
+                        <p style="text-align: center;">Copyright &copy; 2021. Designed by CABC’S Group India</a>
+                        </p>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
         <!-- End Footer Bottom -->
     </footer>
@@ -799,8 +805,9 @@
     <script src="assets/js/jquery.nice-select.min.js"></script>
     <script src="assets/js/bootsnav.js"></script>
     <script src="assets/js/main.js"></script>
-        <!-- <script data-main="assets/js/main.js" src="assets/js/jquery.bxslider.min.js"></script>
+    <!-- <script data-main="assets/js/main.js" src="assets/js/jquery.bxslider.min.js"></script>
         <script data-main="assets/js/main.js" src="assets/js/require.js"></script> -->
 
 </body>
+
 </html>
