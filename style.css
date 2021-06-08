@@ -6428,3 +6428,13 @@ video {
     border-radius: 7px;
     margin: 35px 0 41px;
 }
+
+.img-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.screen-padding-left {
+    padding-left: 5%;
+}
