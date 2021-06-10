@@ -6458,3 +6458,7 @@ ol.breadcrumb li a:hover {
 .breadcrumb {
     background-color: transparent;
 }
+
+.main-test-alignment {
+    text-align: justify;
+}
