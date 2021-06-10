@@ -6438,3 +6438,23 @@ video {
 .screen-padding-left {
     padding-left: 5%;
 }
+
+a,
+a:active,
+a:focus,
+a:hover {
+    color: #086AD8;
+}
+
+ol.breadcrumb li a:hover {
+    color: #086AD8;
+    text-decoration: underline;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    content: "≫";
+}
+
+.breadcrumb {
+    background-color: transparent;
+}
