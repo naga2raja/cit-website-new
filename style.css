@@ -6462,3 +6462,41 @@ ol.breadcrumb li a:hover {
 .main-test-alignment {
     text-align: justify;
 }
+
+.tech-container {
+    position: relative;
+    width: 50%;
+}
+
+.tech-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.tech-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #005eb8;
+}
+
+.tech-container:hover .tech-overlay {
+    opacity: 0.9;
+}
+
+.tech-text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
