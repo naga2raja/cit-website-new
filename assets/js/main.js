@@ -51,7 +51,7 @@
         //             if (json.country_code ==  "JP" && sessionStorage.getItem("langEngClick") != "true" && (pathContainsJP == -1) && sessionStorage.getItem("firstArrivedPath") == null){
         //                 //Append JP pathname to Englist site path name.
         //                 var jPathName = domainName + "/jp";
-                        
+
         //                 // HTTP redirect to Japanese site                       
         //                 var url= pathURL.replace(domainName, jPathName);
         //                 window.location.replace(url);
@@ -60,7 +60,7 @@
         //             else if (json.country_code !=  "JP" && (pathContainsJP != -1) && sessionStorage.getItem("langEngClick") != "true" && sessionStorage.getItem("firstArrivedPath") == null){
         //                 // Replace JP pathname to Englist site path name 
         //                 var url= pathURL.replace("/jp", "");
-                        
+
         //                 // HTTP redirect to English site                       
         //                 window.location.replace(url);
         //             }
@@ -93,13 +93,13 @@
             live: true // act on asynchronously loaded content (default is true)
         });
         wow.init();
-        
+
 
         /* ==================================================
             # Tooltip Init
         ===============================================*/
-        $('[data-toggle="tooltip"]').tooltip(); 
-        
+        $('[data-toggle="tooltip"]').tooltip();
+
 
 
         /* ==================================================
@@ -207,7 +207,7 @@
         });
 
 
-         /* ==================================================
+        /* ==================================================
             # Fun Factor Init
         ===============================================*/
         $('.timer').countTo();
@@ -348,17 +348,18 @@
                 "<i class='fa fa-angle-right'></i>"
             ],
             dots: true,
-            autoplay: true,
+            autoplay: false,
             responsive: {
                 0: {
                     items: 1
                 },
                 800: {
                     items: 2
-                },
-                1000: {
-                    items: 3
                 }
+                // ,
+                // 1000: {
+                //     items: 3
+                // }
             }
         });
 
