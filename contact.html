@@ -5,11 +5,14 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-193468526-1"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
 
-      gtag('config', 'UA-193468526-1');
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-193468526-1');
     </script>
     <!-- End of Google Analytics Code -->
     <!-- ========== Meta Tags ========== -->
@@ -55,7 +58,7 @@
 
     <!-- Start Header Top 
     ============================================= -->
-  <!--  <div class="top-bar-area inc-pad bg-theme text-light">
+    <!--  <div class="top-bar-area inc-pad bg-theme text-light">
         <div class="container">
             <div class="row align-center">
                 <div class="col-lg-6 info">
@@ -106,7 +109,7 @@
     ============================================= -->
     <header id="home">
 
-         <!-- Start Navigation -->
+        <!-- Start Navigation -->
         <nav class="navbar navbar-default active-border navbar-sticky bootsnav">
 
             <div class="container">
@@ -115,11 +118,11 @@
                 <div class="attr-nav inc-border">
                     <ul>
                         <li class="contact">
-                            <i class="fas fa-phone"></i> 
+                            <i class="fas fa-phone"></i>
                             <p>Call us today! <strong>+91 80565 55271</strong></p>
                         </li>
                     </ul>
-                </div>        
+                </div>
                 <!-- End Atribute Navigation -->
 
                 <!-- Start Header Navigation -->
@@ -137,36 +140,34 @@
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav navbar-center" data-in="fadeInDown" data-out="fadeOutUp">
                         <!-- Menu for changing language to Japanese/English Dropdown -->
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    <img id="imgNavSel" src="assets/img/Grossbritanien.gif" alt="..."
-                                    class="img-thumbnail icon-small">&nbsp;&nbsp;<span id="lanNavSel">EN</span>
-                                    <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li>
-                                        <a id="navJap" class="language" href="jp/contact.html">
-                                            <img id="imgNavJap" src="assets/img/Japan.gif" alt="..." class="img-thumbnail icon-small">
-                                            &nbsp;&nbsp;<span id="lanNavJap">日本語</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a id="navEng" class="language" href="">
-                                            <img id="imgNavEng" src="assets/img/Grossbritanien.gif" alt="..."
-                                            class="img-thumbnail icon-small">&nbsp;&nbsp;<span id="lanNavEng">English</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <!-- End of Language change Menu -->
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                <img id="imgNavSel" src="assets/img/Grossbritanien.gif" alt="..." class="img-thumbnail icon-small">&nbsp;&nbsp;<span id="lanNavSel">EN</span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a id="navJap" class="language" href="jp/contact.html">
+                                        <img id="imgNavJap" src="assets/img/Japan.gif" alt="..." class="img-thumbnail icon-small"> &nbsp;&nbsp;
+                                        <span id="lanNavJap">日本語</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a id="navEng" class="language" href="">
+                                        <img id="imgNavEng" src="assets/img/Grossbritanien.gif" alt="..." class="img-thumbnail icon-small">&nbsp;&nbsp;<span id="lanNavEng">English</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- End of Language change Menu -->
                         <li class="dropdown">
                             <a href="index.html">Home</a>
                         </li>
                         <li class="dropdown">
                             <a href="about-us.html">Who we are</a>
-                        </li>   
+                        </li>
                         <li class="dropdown">
-                            <a href="services.html" class="dropdown-toggle" data-toggle="dropdown" >What we do</a>
+                            <a href="services.html" class="dropdown-toggle" data-toggle="dropdown">What we do</a>
                             <ul class="dropdown-menu">
                                 <li><a href="services.html">Services</a></li>
                                 <li><a href="products.html">Products</a></li>
@@ -176,7 +177,8 @@
                         <li><a href="careers.html">Careers</a></li>
                         <li><a href="contact.html" class="active">Contact</a></li>
                     </ul>
-                </div><!-- /.navbar-collapse -->
+                </div>
+                <!-- /.navbar-collapse -->
             </div>
 
         </nav>
@@ -191,7 +193,7 @@
             <div class="row align-center">
                 <div class="col-lg-6">
                     <h2>Contact Us</h2>
-                </div>                
+                </div>
             </div>
         </div>
     </div>
@@ -209,7 +211,7 @@
                             <h2>Need Help?</h2>
                             <p>Reach out to the world’s most reliable IT services.</p>
                         </div>
-                         
+
                         <form action="assets/mail/contact.php" method="POST" class="contact-form">
                             <div class="row">
                                 <div class="col-lg-6">
@@ -308,8 +310,25 @@
                                 </ul>
                             </div>
                             <div id="tab2" class="tab-pane fade">
-                               <!--  <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d14767.262289338461!2d70.79414485000001!3d22.284975!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1424308883981"></iframe> -->
-                               <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=MSC%20Group%20india%20&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div><style>.mapouter{position:relative;text-align:right;height:400px;width:600px;}.gmap_canvas {overflow:hidden;background:none!important;height:400px;width:600px;}</style></div>
+                                <!--  <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d14767.262289338461!2d70.79414485000001!3d22.284975!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1424308883981"></iframe> -->
+                                <div class="mapouter">
+                                    <div class="gmap_canvas"><iframe width="600" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=MSC%20Group%20india%20&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
+                                    <style>
+                                        .mapouter {
+                                            position: relative;
+                                            text-align: right;
+                                            height: 400px;
+                                            width: 600px;
+                                        }
+                                        
+                                        .gmap_canvas {
+                                            overflow: hidden;
+                                            background: none!important;
+                                            height: 400px;
+                                            width: 600px;
+                                        }
+                                    </style>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -320,10 +339,10 @@
     </div>
     <!-- End Contact Area -->
 
-      <!-- Start Footer 
+    <!-- Start Footer 
     ============================================= -->
-   
-     <footer class="bg-dark text-light">
+
+    <footer class="bg-dark text-light">
         <!-- Fixed Shape -->
         <div class="fixed-shape">
             <img src="assets/img/map.svg" alt="Shape">
@@ -336,12 +355,12 @@
                         <div class="f-item about" style="background-color:#fff;">
                             <img src="assets/img/cabcs-group-india_logo.png" alt="Logo">
                             <p class="info-details" style="color:#000; ">
-                               <!-- We are an CABC's group company with registered office in Bengaluru, India founded on the philosophy of multi-purpose innovations, from technology services to processes.-->
-                               We are a CABC’S Group Company with registered office is Bengaluru, India and are foundeded on the philosophy of constant innovations in processes, products and services
-                            </p>                           
+                                <!-- We are an CABC's group company with registered office in Bengaluru, India founded on the philosophy of multi-purpose innovations, from technology services to processes.-->
+                                We are a CABC’S Group Company with registered office is Bengaluru, India and are foundeded on the philosophy of constant innovations in processes, products and services
+                            </p>
                         </div>
                     </div>
-                     <div class="col-lg-3 col-md-8 item">
+                    <div class="col-lg-3 col-md-8 item">
                         <div class="f-item link">
                             <h4 class="widget-title">Company</h4>
                             <ul>
@@ -360,13 +379,13 @@
                                 <li>
                                     <a href="about-us.html#OurGroupCompanies">Our Group Companies</a>
                                 </li>
-                                 <li>
+                                <li>
                                     <a href="about-us.html#LatestNews">News</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    
+
                     <div class="col-lg-2 col-md-6 item">
                         <div class="f-item link">
                             <h4 class="widget-title">Services</h4>
@@ -377,7 +396,7 @@
                                 <li><a href="products.html">Products</a></li>
                                 <li>
                                     <a href="technologies.html"> Technologies</a>
-                                </li>                              
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -388,8 +407,7 @@
                             <div class="address">
                                 <ul>
                                     <li>
-                                        <strong>Address:</strong>
-                                        CRN Square, 2nd Floor, No.15, Kasturba Road, Bangalore 560-001.
+                                        <strong>Address:</strong> CRN Square, 2nd Floor, No.15, Kasturba Road, Bangalore 560-001.
                                     </li>
                                     <li>
                                         <strong>Email:</strong>
@@ -399,40 +417,40 @@
                             </div>
 
                             <div class="download">
-                                <strong>PAMPHLET</strong>                                
+                                <strong>PAMPHLET</strong>
                                 <div class="row">
-                                    
+
                                     <div class="col-3 col-md-6 col-lg-3 clearfix">
-                                        <a href="assets/pdf/CABCS_Group_India_Pamphlet.pdf" download="CABC_India_Pamphlet_set.pdf" onclick="ga('send', 'event', 'Pamphlet', 'Download', 'CABCS_Home');">                                   
+                                        <a href="assets/pdf/CABCS_Group_India_Pamphlet.pdf" download="CABC_India_Pamphlet_set.pdf" onclick="ga('send', 'event', 'Pamphlet', 'Download', 'CABCS_Home');">
                                             <span>
-                                                <img src="assets/img/btmarrow.svg" style="max-width:40%">
+                                                <img src="assets/img/btmarrow.svg" style="width:40%;height: 40%;">
                                                 <p style="color:white;text:center;font-size:tiny;line-height: 1.2em;margin-top:0px;">CABC'S Group India </p>
                                             </span>
                                         </a>
-                                    </div> 
-
-                                    <div class="col-3 col-md-6 col-lg-3 clearfix">                                         
-                                        <a href="assets/pdf/Qsfix_Pamphlet.pdf" download="Q`sfix_Pamphlet_set.pdf"
-                                            onclick="ga('send', 'event', 'Pamphlet', 'Download', 'CABCS_Home');">
-                                                <span>
-                                                    <img src="assets/img/btmarrow.svg" style="max-width:50%">
-                                                    <p style="color:white;text:center;line-height: 1.2em;margin-top:0px;"> Q`sfix </p>
-                                                </span>                                                         
-                                        </a>
-                                    </div>                                          
-                         
-                                    <div class="col-3 col-md-6 col-lg-3 clearfix">           
-                                        <a href="assets/pdf/CABCS_Group_Pamphlet_set.zip" download="CABCS_Group_Pamphlet_set.zip"
-                                        onclick="ga('send', 'event', 'Pamphlet', 'Download', 'CABCS_Home');">
-                                                
-                                            <span style="color:white;text:center;font-size:tiny;">
-                                                <img src="assets/img/btmarrow.svg" style="max-width:30%">
-                                                    <p style="color:white;text:center;font-size:tiny;line-height:1.2em;margin-top:0px;"> CABC'S Group Companies </p>                    
-                                            </span>                                                         
-                                        </a>                                            
-                                        </br></br>          
                                     </div>
-                                </div> <!-- End of Download --> 
+
+                                    <div class="col-3 col-md-6 col-lg-3 clearfix">
+                                        <a href="assets/pdf/Qsfix_Pamphlet.pdf" download="Q`sfix_Pamphlet_set.pdf" onclick="ga('send', 'event', 'Pamphlet', 'Download', 'CABCS_Home');">
+                                            <span>
+                                                    <img src="assets/img/btmarrow.svg" style="width:50%;height: 50%;">
+                                                    <p style="color:white;text:center;line-height: 1.2em;margin-top:0px;"> Q`sfix </p>
+                                                </span>
+                                        </a>
+                                    </div>
+
+                                    <div class="col-3 col-md-6 col-lg-3 clearfix">
+                                        <a href="assets/pdf/CABCS_Group_Pamphlet_set.zip" download="CABCS_Group_Pamphlet_set.zip" onclick="ga('send', 'event', 'Pamphlet', 'Download', 'CABCS_Home');">
+
+                                            <span style="color:white;text:center;font-size:tiny;">
+                                                <img src="assets/img/btmarrow.svg" style="width:30%;height: 30%;">
+                                                    <p style="color:white;text:center;font-size:tiny;line-height:1.2em;margin-top:0px;"> CABC'S Group Companies </p>                    
+                                            </span>
+                                        </a>
+                                        </br>
+                                        </br>
+                                    </div>
+                                </div>
+                                <!-- End of Download -->
 
                             </div>
                         </div>
@@ -441,16 +459,17 @@
                 </div>
             </div>
         </div>
-         <!-- Start Footer Bottom -->
+        <!-- Start Footer Bottom -->
         <div class="footer-bottom">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12" >
-                        <p style="text-align: center;">Copyright &copy;  2021. Designed by CABC’S Group India</a></p>
-                    </div>                   
+                    <div class="col-md-12">
+                        <p style="text-align: center;">Copyright &copy; 2021. Designed by CABC’S Group India</a>
+                        </p>
                     </div>
                 </div>
             </div>
+        </div>
         </div>
         <!-- End Footer Bottom -->
     </footer>
@@ -478,4 +497,5 @@
     <script src="assets/js/main.js"></script>
 
 </body>
+
 </html>
