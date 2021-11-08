@@ -6500,3 +6500,11 @@ ol.breadcrumb li a:hover {
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
 }
+
+.font{
+    
+    color: #333;
+    font-family: 'Inter';
+    font-size: 20px;
+    font-weight: normal;
+}
